@@ -90,7 +90,7 @@
     "networks": "Avalanche",
     "launched": 2021,
     "x": "https://x.com/SnowScanHQ",
-    "docs": "https://docs.snowscan.xyz",
+    "docs": "https://docs.etherscan.io/etherscan-v2",
     "apiUrl": "https://api.snowscan.xyz/api"
   },
   {
@@ -142,7 +142,7 @@
     "networks": "Sonic",
     "launched": 2024,
     "x": "https://x.com/SonicLabs",
-    "docs": "https://docs.sonicscan.org",
+    "docs": "https://docs.etherscan.io/etherscan-v2",
     "apiUrl": "https://api.sonicscan.org/api"
   },
   {
@@ -263,8 +263,7 @@
     "networks": "Sui",
     "launched": 2023,
     "x": "https://x.com/suivision",
-    "docs": "https://docs.blockvision.org",
-    "apiUrl": "https://sui-mainnet-endpoint.blockvision.org"
+    "docs": "https://docs.blockvision.org"
   },
   {
     "name": "Seitrace",
@@ -293,8 +292,7 @@
     "networks": "Harmony",
     "launched": 2019,
     "github": "https://github.com/harmony-one/explorer-v2-frontend",
-    "docs": "https://docs.harmony.one/home/developers/api",
-    "apiUrl": "https://explorer-v2-api.hmny.io"
+    "docs": "https://docs.harmony.one/home/developers/api"
   },
   {
     "name": "Arbiscan",
@@ -337,13 +335,13 @@
     "apiUrl": "https://api.blastscan.io/api"
   },
   {
-    "name": "Mantle Explorer",
-    "description": "Mantle Explorer is the official block explorer for Mantle Network, an Ethereum L2 built with modular architecture.",
-    "website": "https://explorer.mantle.xyz",
+    "name": "MantleScan",
+    "description": "MantleScan is the official block explorer for Mantle Network, an Ethereum L2 built with modular architecture.",
+    "website": "https://mantlescan.xyz",
     "networks": "Mantle",
     "launched": 2023,
-    "docs": "https://explorer.mantle.xyz/api-docs",
-    "apiUrl": "https://explorer.mantle.xyz/api"
+    "docs": "https://docs.mantlescan.xyz",
+    "apiUrl": "https://api.mantlescan.xyz/api"
   },
   {
     "name": "Metis Explorer",
@@ -441,7 +439,7 @@
     "website": "https://moonscan.io",
     "networks": "Moonbeam",
     "launched": 2021,
-    "x": "https://x.com/moonscan_io",
+    "x": "https://x.com/moonscanhq",
     "docs": "https://docs.moonscan.io",
     "apiUrl": "https://api.moonscan.io/api"
   },
@@ -473,7 +471,6 @@
     "launched": 2022,
     "x": "https://x.com/auroraisnear",
     "github": "https://github.com/aurora-is-near",
-    "docs": "https://explorer.mainnet.aurora.dev/api-docs",
-    "apiUrl": "https://explorer.mainnet.aurora.dev/api"
+    "docs": "https://explorer.mainnet.aurora.dev/api-docs"
   }
 ]
