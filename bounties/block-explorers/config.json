@@ -1,0 +1,61 @@
+{
+  "bountyName": "Block explorers for major networks",
+  "editName": "Add block explorers for major networks",
+  "entityTypeName": "Block explorer",
+  "fields": [
+    {
+      "key": "name",
+      "label": "Name",
+      "type": "text",
+      "wellKnownPropertyId": "a126ca530c8e48d5b88882c734c38935",
+      "required": true
+    },
+    {
+      "key": "description",
+      "label": "Description",
+      "type": "text",
+      "wellKnownPropertyId": "9b1f76ff9711404c861e59dc3fa7d037"
+    },
+    {
+      "key": "website",
+      "label": "Website",
+      "type": "url",
+      "wellKnownPropertyId": "eed38e74e67946bf8a42ea3e4f8fb5fb"
+    },
+    {
+      "key": "networks",
+      "label": "Supported networks",
+      "type": "text"
+    },
+    {
+      "key": "launched",
+      "label": "Launched",
+      "type": "int64"
+    },
+    {
+      "key": "x",
+      "label": "X",
+      "type": "url"
+    },
+    {
+      "key": "linkedin",
+      "label": "LinkedIn",
+      "type": "url"
+    },
+    {
+      "key": "github",
+      "label": "GitHub",
+      "type": "url"
+    },
+    {
+      "key": "docs",
+      "label": "Docs url",
+      "type": "url"
+    },
+    {
+      "key": "apiUrl",
+      "label": "Api url",
+      "type": "url"
+    }
+  ]
+}

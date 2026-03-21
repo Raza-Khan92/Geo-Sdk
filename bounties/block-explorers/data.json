@@ -1,0 +1,479 @@
+[
+  {
+    "name": "Etherscan",
+    "description": "Etherscan is the leading blockchain explorer, search, API and analytics platform for Ethereum, a decentralized smart contracts platform.",
+    "website": "https://etherscan.io",
+    "networks": "Ethereum",
+    "launched": 2015,
+    "x": "https://x.com/etherscan",
+    "linkedin": "https://www.linkedin.com/company/etherscan",
+    "docs": "https://docs.etherscan.io",
+    "apiUrl": "https://api.etherscan.io/api"
+  },
+  {
+    "name": "Blockscout",
+    "description": "Blockscout is an open-source blockchain explorer for Ethereum-based networks. It provides a comprehensive, easy-to-use interface for searching the blockchain and viewing transactions, blocks, addresses, and token transfers.",
+    "website": "https://www.blockscout.com",
+    "networks": "Ethereum, Gnosis Chain, Ethereum Classic, Base, Optimism, Arbitrum One, Polygon, zkSync Era, Scroll, Linea, and more",
+    "launched": 2018,
+    "x": "https://x.com/blockscoutcom",
+    "linkedin": "https://www.linkedin.com/company/blockscout",
+    "github": "https://github.com/blockscout/blockscout",
+    "docs": "https://docs.blockscout.com",
+    "apiUrl": "https://eth.blockscout.com/api"
+  },
+  {
+    "name": "Mempool.space",
+    "description": "Mempool.space is an open-source Bitcoin block explorer and mempool visualizer. It provides real-time data on Bitcoin transactions, blocks, fees, and network statistics.",
+    "website": "https://mempool.space",
+    "networks": "Bitcoin",
+    "launched": 2019,
+    "x": "https://x.com/mempool",
+    "github": "https://github.com/mempool/mempool",
+    "docs": "https://mempool.space/docs/api/rest",
+    "apiUrl": "https://mempool.space/api"
+  },
+  {
+    "name": "Blockchain.com Explorer",
+    "description": "Blockchain.com Explorer is one of the oldest and most visited Bitcoin block explorers, providing data on Bitcoin transactions, blocks, and wallet addresses.",
+    "website": "https://www.blockchain.com/explorer",
+    "networks": "Bitcoin",
+    "launched": 2011,
+    "x": "https://x.com/blockchain",
+    "linkedin": "https://www.linkedin.com/company/blockchain",
+    "docs": "https://www.blockchain.com/explorer/api",
+    "apiUrl": "https://www.blockchain.com/api"
+  },
+  {
+    "name": "BscScan",
+    "description": "BscScan is the leading blockchain explorer for BNB Smart Chain, providing detailed information on transactions, smart contracts, tokens, and wallet activity.",
+    "website": "https://bscscan.com",
+    "networks": "BNB Smart Chain",
+    "launched": 2020,
+    "x": "https://x.com/bscscan",
+    "docs": "https://docs.bscscan.com",
+    "apiUrl": "https://api.bscscan.com/api"
+  },
+  {
+    "name": "Solscan",
+    "description": "Solscan is a user-friendly and real-time Solana blockchain explorer providing insights into transactions, accounts, tokens, and programs on the Solana network.",
+    "website": "https://solscan.io",
+    "networks": "Solana",
+    "launched": 2021,
+    "x": "https://x.com/solscanofficial",
+    "docs": "https://pro-api.solscan.io/pro-api-docs",
+    "apiUrl": "https://pro-api.solscan.io"
+  },
+  {
+    "name": "Solana Explorer",
+    "description": "Solana Explorer is the official block explorer maintained by Solana Foundation for inspecting transactions, accounts, blocks, and programs on the Solana network.",
+    "website": "https://explorer.solana.com",
+    "networks": "Solana",
+    "launched": 2020,
+    "github": "https://github.com/solana-labs/explorer"
+  },
+  {
+    "name": "Avascan",
+    "description": "Avascan is the premier blockchain explorer for Avalanche, covering the C-Chain, X-Chain, P-Chain, and all Avalanche subnets.",
+    "website": "https://avascan.info",
+    "networks": "Avalanche",
+    "launched": 2020,
+    "x": "https://x.com/AvascanExplorer",
+    "github": "https://github.com/avascan",
+    "docs": "https://docs.avascan.info",
+    "apiUrl": "https://api.avascan.info"
+  },
+  {
+    "name": "SnowScan",
+    "description": "SnowScan is a block explorer and analytics platform for the Avalanche C-Chain, operated by Etherscan.",
+    "website": "https://snowscan.xyz",
+    "networks": "Avalanche",
+    "launched": 2021,
+    "x": "https://x.com/SnowScanHQ",
+    "docs": "https://docs.snowscan.xyz",
+    "apiUrl": "https://api.snowscan.xyz/api"
+  },
+  {
+    "name": "Polygonscan",
+    "description": "Polygonscan is the leading blockchain explorer for the Polygon PoS network, offering transaction lookups, smart contract verification, and token analytics.",
+    "website": "https://polygonscan.com",
+    "networks": "Polygon (PoS)",
+    "launched": 2021,
+    "x": "https://x.com/polygonscan",
+    "docs": "https://docs.polygonscan.com",
+    "apiUrl": "https://api.polygonscan.com/api"
+  },
+  {
+    "name": "CardanoScan",
+    "description": "CardanoScan is a blockchain explorer and analytics platform for the Cardano network, supporting ADA transactions, staking, NFTs, and native tokens.",
+    "website": "https://cardanoscan.io",
+    "networks": "Cardano",
+    "launched": 2021,
+    "x": "https://x.com/cardanoscanio",
+    "github": "https://github.com/StricaHQ/cardanoscan-js",
+    "docs": "https://docs.cardanoscan.io",
+    "apiUrl": "https://cardanoscan.io/api-documentation"
+  },
+  {
+    "name": "Adastat",
+    "description": "Adastat is an alternative Cardano blockchain explorer providing statistics on blocks, transactions, pools, and native assets.",
+    "website": "https://adastat.net",
+    "networks": "Cardano",
+    "launched": 2019,
+    "x": "https://x.com/ada_stat",
+    "docs": "https://api.adastat.net",
+    "apiUrl": "https://api.adastat.net"
+  },
+  {
+    "name": "Tronscan",
+    "description": "Tronscan is the official block explorer for the TRON blockchain, providing data on transactions, blocks, accounts, smart contracts, and DeFi activity.",
+    "website": "https://tronscan.org",
+    "networks": "Tron",
+    "launched": 2018,
+    "x": "https://x.com/tronscan_org",
+    "github": "https://github.com/tronscan",
+    "docs": "https://docs.tronscan.org",
+    "apiUrl": "https://apilist.tronscanapi.com/api"
+  },
+  {
+    "name": "SonicScan",
+    "description": "SonicScan is the leading blockchain explorer for the Sonic network, an EVM-compatible Layer-1 blockchain formerly known as Fantom. Powered by Etherscan, it provides comprehensive data on transactions, blocks, addresses, tokens, and smart contracts on the Sonic chain.",
+    "website": "https://sonicscan.org",
+    "networks": "Sonic",
+    "launched": 2024,
+    "x": "https://x.com/SonicLabs",
+    "docs": "https://docs.sonicscan.org",
+    "apiUrl": "https://api.sonicscan.org/api"
+  },
+  {
+    "name": "NearBlocks",
+    "description": "NearBlocks is a blockchain explorer and analytics platform for the NEAR Protocol, offering insights into transactions, accounts, tokens, and smart contracts.",
+    "website": "https://nearblocks.io",
+    "networks": "Near Protocol",
+    "launched": 2021,
+    "x": "https://x.com/nearblocks",
+    "github": "https://github.com/Nearblocks",
+    "docs": "https://api3.nearblocks.io/api-docs",
+    "apiUrl": "https://api3.nearblocks.io"
+  },
+  {
+    "name": "Allo.info",
+    "description": "Allo.info is a blockchain explorer for the Algorand network, providing data on transactions, accounts, assets, and applications.",
+    "website": "https://allo.info",
+    "networks": "Algorand",
+    "launched": 2022,
+    "x": "https://x.com/alloinfo"
+  },
+  {
+    "name": "Mintscan",
+    "description": "Mintscan is a multi-chain blockchain explorer for the Cosmos ecosystem, covering the Cosmos Hub and all IBC-connected chains.",
+    "website": "https://mintscan.io",
+    "networks": "Cosmos Hub",
+    "launched": 2019,
+    "x": "https://x.com/mintScan",
+    "docs": "https://mintscan.io/cosmos/api",
+    "apiUrl": "https://api.mintscan.io"
+  },
+  {
+    "name": "Subscan",
+    "description": "Subscan is a high-precision blockchain explorer for Substrate-based networks, covering Polkadot, Kusama, and all parachains.",
+    "website": "https://polkadot.subscan.io",
+    "networks": "Polkadot",
+    "launched": 2020,
+    "x": "https://x.com/subscan_io",
+    "docs": "https://support.subscan.io",
+    "apiUrl": "https://polkadot.api.subscan.io"
+  },
+  {
+    "name": "Stellar Expert",
+    "description": "Stellar.Expert is an advanced blockchain explorer and analytics platform for the Stellar network, supporting transactions, accounts, assets, and DEX activity.",
+    "website": "https://stellar.expert",
+    "networks": "Stellar",
+    "launched": 2018,
+    "x": "https://x.com/stellar_expert",
+    "github": "https://github.com/stellar-expert",
+    "docs": "https://stellar.expert/openapi.html",
+    "apiUrl": "https://api.stellar.expert"
+  },
+  {
+    "name": "XRPScan",
+    "description": "XRPScan is a blockchain explorer and analytics platform for the XRP Ledger, providing data on transactions, accounts, tokens, and DEX activity.",
+    "website": "https://xrpscan.com",
+    "networks": "XRP Ledger",
+    "launched": 2019,
+    "x": "https://x.com/xrpscan",
+    "docs": "https://docs.xrpscan.com",
+    "apiUrl": "https://api.xrpscan.com/api/v1"
+  },
+  {
+    "name": "Bithomp",
+    "description": "Bithomp is a blockchain explorer for the XRP Ledger focused on account lookups, username resolution, NFTs, and payment history.",
+    "website": "https://bithomp.com",
+    "networks": "XRP Ledger",
+    "launched": 2015,
+    "x": "https://x.com/bithomp",
+    "docs": "https://docs.bithomp.com"
+  },
+  {
+    "name": "TzKT",
+    "description": "TzKT is an open-source, high-performance blockchain explorer and API for the Tezos network, supporting transactions, smart contracts, tokens, and baking data.",
+    "website": "https://tzkt.io",
+    "networks": "Tezos",
+    "launched": 2020,
+    "x": "https://x.com/tzkt_io",
+    "github": "https://github.com/baking-bad/tzkt",
+    "docs": "https://api.tzkt.io",
+    "apiUrl": "https://api.tzkt.io"
+  },
+  {
+    "name": "Blockscout (ETC)",
+    "description": "Blockscout is the official open-source block explorer for Ethereum Classic, providing full visibility into transactions, blocks, and smart contracts.",
+    "website": "https://etc.blockscout.com",
+    "networks": "Ethereum Classic",
+    "launched": 2022,
+    "github": "https://github.com/blockscout/blockscout",
+    "docs": "https://docs.blockscout.com",
+    "apiUrl": "https://etc.blockscout.com/api"
+  },
+  {
+    "name": "HashScan",
+    "description": "HashScan is the official explorer for the Hedera network, providing data on transactions, tokens, smart contracts, and network consensus.",
+    "website": "https://hashscan.io",
+    "networks": "Hedera",
+    "launched": 2022,
+    "github": "https://github.com/hashgraph/hedera-mirror-node-explorer",
+    "docs": "https://docs.hedera.com",
+    "apiUrl": "https://mainnet.mirrornode.hedera.com/api/v1"
+  },
+  {
+    "name": "Aptos Explorer",
+    "description": "Aptos Explorer is the official block explorer maintained by Aptos Labs for browsing transactions, accounts, tokens, and modules on the Aptos blockchain.",
+    "website": "https://explorer.aptoslabs.com",
+    "networks": "Aptos",
+    "launched": 2022,
+    "x": "https://x.com/AptosLabs",
+    "github": "https://github.com/aptos-labs/explorer",
+    "docs": "https://aptos.dev/",
+    "apiUrl": "https://api.mainnet.aptoslabs.com/v1"
+  },
+  {
+    "name": "SuiVision",
+    "description": "SuiVision is the most widely used block explorer for the Sui blockchain, providing detailed views of transactions, objects, accounts, and packages.",
+    "website": "https://suivision.xyz",
+    "networks": "Sui",
+    "launched": 2023,
+    "x": "https://x.com/suivision",
+    "docs": "https://docs.blockvision.org",
+    "apiUrl": "https://sui-mainnet-endpoint.blockvision.org"
+  },
+  {
+    "name": "Seitrace",
+    "description": "Seitrace is the official block explorer for the Sei network, offering transaction lookup, contract verification, and token analytics.",
+    "website": "https://seitrace.com",
+    "networks": "Sei",
+    "launched": 2023,
+    "x": "https://x.com/seitrace",
+    "docs": "https://docs.seitrace.com",
+    "apiUrl": "https://seitrace.com/pacific-1/api"
+  },
+  {
+    "name": "Kaiascan",
+    "description": "Kaiascan is the official block explorer for the Kaia (formerly Klaytn) blockchain, covering transactions, blocks, accounts, and smart contracts.",
+    "website": "https://kaiascan.io",
+    "networks": "Kaia (Klaytn)",
+    "launched": 2024,
+    "x": "https://x.com/KaiaChain",
+    "docs": "https://docs.kaiascan.io",
+    "apiUrl": "https://mainnet-oapi.kaiascan.io/api"
+  },
+  {
+    "name": "Harmony Explorer",
+    "description": "Harmony Explorer is the official block explorer for the Harmony blockchain, providing data on transactions, blocks, staking, and smart contracts.",
+    "website": "https://explorer.harmony.one",
+    "networks": "Harmony",
+    "launched": 2019,
+    "github": "https://github.com/harmony-one/explorer-v2-frontend",
+    "docs": "https://docs.harmony.one/home/developers/api",
+    "apiUrl": "https://explorer-v2-api.hmny.io"
+  },
+  {
+    "name": "Arbiscan",
+    "description": "Arbiscan is the leading blockchain explorer for Arbitrum One, providing transaction history, smart contract data, token transfers, and gas analytics.",
+    "website": "https://arbiscan.io",
+    "networks": "Arbitrum One",
+    "launched": 2021,
+    "x": "https://x.com/arbiscan",
+    "docs": "https://docs.arbiscan.io",
+    "apiUrl": "https://api.arbiscan.io/api"
+  },
+  {
+    "name": "Optimistic Etherscan",
+    "description": "Optimistic Etherscan is the primary block explorer for the Optimism network, offering full transaction, contract, and token visibility.",
+    "website": "https://optimistic.etherscan.io",
+    "networks": "Optimism",
+    "launched": 2021,
+    "x": "https://x.com/etherscan",
+    "docs": "https://optimistic.etherscan.io/apis",
+    "apiUrl": "https://api-optimistic.etherscan.io/api"
+  },
+  {
+    "name": "BaseScan",
+    "description": "BaseScan is the leading blockchain explorer for Base, Coinbase's Ethereum L2 network, providing transaction lookup, smart contract verification, and token analytics.",
+    "website": "https://basescan.org",
+    "networks": "Base",
+    "launched": 2023,
+    "x": "https://x.com/BaseScanHQ",
+    "docs": "https://docs.basescan.org",
+    "apiUrl": "https://api.basescan.org/api"
+  },
+  {
+    "name": "Blastscan",
+    "description": "Blastscan is the official block explorer for the Blast network, an Ethereum L2 with native yield for ETH and stablecoins.",
+    "website": "https://blastscan.io",
+    "networks": "Blast",
+    "launched": 2024,
+    "x": "https://x.com/blastscan",
+    "docs": "https://docs.blastscan.io",
+    "apiUrl": "https://api.blastscan.io/api"
+  },
+  {
+    "name": "Mantle Explorer",
+    "description": "Mantle Explorer is the official block explorer for Mantle Network, an Ethereum L2 built with modular architecture.",
+    "website": "https://explorer.mantle.xyz",
+    "networks": "Mantle",
+    "launched": 2023,
+    "docs": "https://explorer.mantle.xyz/api-docs",
+    "apiUrl": "https://explorer.mantle.xyz/api"
+  },
+  {
+    "name": "Metis Explorer",
+    "description": "Metis Explorer is the official block explorer for the Metis Andromeda L2 network, providing transaction and smart contract data.",
+    "website": "https://explorer.metis.io",
+    "networks": "Metis",
+    "launched": 2021,
+    "docs": "https://explorer.metis.io/api-docs",
+    "apiUrl": "https://explorer.metis.io/api"
+  },
+  {
+    "name": "Bobascan",
+    "description": "Bobascan is the official block explorer for Boba Network, an Ethereum L2 focused on fast exits and hybrid compute.",
+    "website": "https://bobascan.com",
+    "networks": "Boba Network",
+    "launched": 2021,
+    "docs": "https://bobascan.com/documentation",
+    "apiUrl": "https://api.routescan.io/v2/network/mainnet/evm/288/etherscan"
+  },
+  {
+    "name": "zkSync Explorer",
+    "description": "zkSync Explorer is the official block explorer for zkSync Era, a ZK rollup developed by Matter Labs, supporting transactions, tokens, and smart contracts.",
+    "website": "https://explorer.zksync.io",
+    "networks": "zkSync Era",
+    "launched": 2023,
+    "x": "https://x.com/zkSyncExplorer",
+    "github": "https://github.com/matter-labs/block-explorer",
+    "docs": "https://docs.zksync.io",
+    "apiUrl": "https://block-explorer-api.mainnet.zksync.io/api"
+  },
+  {
+    "name": "Starkscan",
+    "description": "Starkscan is a leading block explorer for Starknet, a ZK rollup on Ethereum, supporting transactions, contracts, tokens, and Cairo classes.",
+    "website": "https://starkscan.co",
+    "networks": "Starknet",
+    "launched": 2022,
+    "x": "https://x.com/starkscan",
+    "github": "https://github.com/starkscan",
+    "docs": "https://starkscan.co/api",
+    "apiUrl": "https://api.starkscan.co"
+  },
+  {
+    "name": "Voyager",
+    "description": "Voyager is an alternative Starknet block explorer developed by Nethermind, providing transaction lookup, contract verification, and network analytics.",
+    "website": "https://voyager.online",
+    "networks": "Starknet",
+    "launched": 2022,
+    "x": "https://x.com/0xvoyageronline",
+    "docs": "https://docs.voyager.online",
+    "apiUrl": "https://api.voyager.online"
+  },
+  {
+    "name": "Lineascan",
+    "description": "Lineascan is the official block explorer for Linea, a ZK rollup developed by ConsenSys, offering transaction and smart contract data.",
+    "website": "https://lineascan.build",
+    "networks": "Linea",
+    "launched": 2023,
+    "x": "https://x.com/lineascan",
+    "docs": "https://docs.lineascan.build",
+    "apiUrl": "https://api.lineascan.build/api"
+  },
+  {
+    "name": "Scrollscan",
+    "description": "Scrollscan is the official block explorer for Scroll, a ZK rollup on Ethereum, providing full transaction, contract, and token analytics.",
+    "website": "https://scrollscan.com",
+    "networks": "Scroll",
+    "launched": 2023,
+    "x": "https://x.com/scrollscan",
+    "docs": "https://docs.scrollscan.com",
+    "apiUrl": "https://api.scrollscan.com/api"
+  },
+  {
+    "name": "Gnosisscan",
+    "description": "Gnosisscan is the primary block explorer for Gnosis Chain (formerly xDai), providing transaction history, smart contract data, and token analytics.",
+    "website": "https://gnosisscan.io",
+    "networks": "Gnosis Chain",
+    "launched": 2022,
+    "x": "https://x.com/gnosisscan",
+    "docs": "https://docs.gnosisscan.io",
+    "apiUrl": "https://api.gnosisscan.io/api"
+  },
+  {
+    "name": "Cronoscan",
+    "description": "Cronoscan is the leading block explorer for the Cronos blockchain, the EVM-compatible chain developed by Crypto.com.",
+    "website": "https://cronoscan.com",
+    "networks": "Cronos",
+    "launched": 2021,
+    "x": "https://x.com/cronoscan",
+    "docs": "https://cronoscan.com/apis",
+    "apiUrl": "https://api.cronoscan.com/api"
+  },
+  {
+    "name": "Moonscan",
+    "description": "Moonscan is the primary block explorer for Moonbeam, a Polkadot parachain providing full Ethereum compatibility.",
+    "website": "https://moonscan.io",
+    "networks": "Moonbeam",
+    "launched": 2021,
+    "x": "https://x.com/moonscan_io",
+    "docs": "https://docs.moonscan.io",
+    "apiUrl": "https://api.moonscan.io/api"
+  },
+  {
+    "name": "Moonriver Moonscan",
+    "description": "Moonriver Moonscan is the block explorer for Moonriver, the Kusama-based canary network of Moonbeam.",
+    "website": "https://moonriver.moonscan.io",
+    "networks": "Moonriver",
+    "launched": 2021,
+    "x": "https://x.com/moonscanhq",
+    "docs": "https://docs.moonscan.io",
+    "apiUrl": "https://api-moonriver.moonscan.io/api"
+  },
+  {
+    "name": "Celoscan",
+    "description": "Celoscan is the leading block explorer for the Celo network, an EVM-compatible blockchain focused on mobile-first DeFi.",
+    "website": "https://celoscan.io",
+    "networks": "Celo",
+    "launched": 2022,
+    "x": "https://x.com/CeloscanHQ",
+    "docs": "https://docs.celoscan.io",
+    "apiUrl": "https://api.celoscan.io/api"
+  },
+  {
+    "name": "Aurora Explorer",
+    "description": "Aurora Explorer is the official block explorer for Aurora, an EVM environment running on the NEAR Protocol.",
+    "website": "https://explorer.mainnet.aurora.dev",
+    "networks": "Aurora",
+    "launched": 2022,
+    "x": "https://x.com/auroraisnear",
+    "github": "https://github.com/aurora-is-near",
+    "docs": "https://explorer.mainnet.aurora.dev/api-docs",
+    "apiUrl": "https://explorer.mainnet.aurora.dev/api"
+  }
+]

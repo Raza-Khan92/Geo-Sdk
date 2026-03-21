@@ -3,6 +3,7 @@ import {
   getSmartAccountWalletClient,
   getWalletClient,
   personalSpace,
+  daoSpace,
   TESTNET_RPC_URL,
 } from "@geoprotocol/geo-sdk";
 import { SpaceRegistryAbi } from "@geoprotocol/geo-sdk/abis";
@@ -10,12 +11,11 @@ import { TESTNET } from "@geoprotocol/geo-sdk/contracts";
 import type { Op } from "@geoprotocol/geo-sdk";
 import { TESTNET_API_URL } from "./constants.js";
 
-// Run a GraphQL query against the Geo testnet API
-export async function gql(query: string): Promise<any> {
+export async function gql(query: string, variables?: Record<string, unknown>): Promise<any> {
   const res = await fetch(TESTNET_API_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ query }),
+    body: JSON.stringify({ query, variables }),
   });
   if (!res.ok) throw new Error(`Geo API ${res.status}: ${res.statusText}`);
   const json = await res.json();
@@ -23,8 +23,6 @@ export async function gql(query: string): Promise<any> {
   return json.data;
 }
 
-// Search Geo for an entity by exact name. Returns its ID or null.
-// Used before every create to avoid duplicates.
 export async function searchEntityByName(name: string): Promise<string | null> {
   try {
     const data = await gql(`{
@@ -47,8 +45,8 @@ export interface PublishConfig {
   ops: Op[];
   editName: string;
   privateKey: `0x${string}`;
-  spaceId?: string;       // defaults to personal space
-  useSmartAccount?: boolean; // default true (gas-sponsored)
+  spaceId?: string;
+  useSmartAccount?: boolean;
 }
 
 export interface PublishResult {
@@ -60,7 +58,6 @@ export interface PublishResult {
   error?: string;
 }
 
-// Resolve the personal space ID for an address, creating it on-chain if needed
 async function resolvePersonalSpaceId(
   address: string,
   walletClient: Awaited<ReturnType<typeof getSmartAccountWalletClient>>
@@ -85,7 +82,6 @@ async function resolvePersonalSpaceId(
   return spaceIdHex.slice(2, 34).toLowerCase();
 }
 
-// Publish a batch of ops as one Geo edit
 export async function publishOps(config: PublishConfig): Promise<PublishResult> {
   const { ops, editName, privateKey, useSmartAccount = true } = config;
   try {
@@ -100,17 +96,71 @@ export async function publishOps(config: PublishConfig): Promise<PublishResult> 
       config.spaceId ?? (await resolvePersonalSpaceId(address, walletClient as any));
     console.log(`  Space:  ${spaceId}`);
 
-    const { cid, editId, to, calldata } = await personalSpace.publishEdit({
-      name: editName,
-      spaceId,
-      ops,
-      author: spaceId as `0x${string}`,
-      network: "TESTNET",
-    });
+    const publicClient = createPublicClient({ transport: http(TESTNET_RPC_URL) });
+
+    const spaceData = await gql(`{
+      space(id: "${spaceId}") {
+        type
+        address
+        membersList { memberSpaceId }
+        editorsList { memberSpaceId }
+      }
+    }`);
+
+    if (!spaceData.space) throw new Error(`Space ${spaceId} not found`);
+
+    const { type: spaceType, address: daoAddress } = spaceData.space;
+
+    let cid: string;
+    let editId: string;
+    let to: `0x${string}`;
+    let calldata: `0x${string}`;
+
+    if (spaceType === "PERSONAL") {
+      const result = await personalSpace.publishEdit({
+        name: editName,
+        spaceId,
+        ops,
+        author: spaceId as `0x${string}`,
+        network: "TESTNET",
+      });
+      ({ cid, editId, to, calldata } = result);
+    } else {
+      const personalSpaceData = await gql(`{
+        spaces(filter: { address: { is: "${address}" } }) { id type }
+      }`);
+      const callerSpace = (personalSpaceData.spaces ?? []).find(
+        (s: any) => s.type === "PERSONAL"
+      );
+      if (!callerSpace) {
+        throw new Error(`No personal space found for wallet ${address}`);
+      }
+      const callerSpaceId: string = callerSpace.id;
+
+      const members: any[] = spaceData.space.membersList ?? [];
+      const editors: any[] = spaceData.space.editorsList ?? [];
+      const isMember = [...members, ...editors].some(
+        (m) => m.memberSpaceId === callerSpaceId
+      );
+      if (!isMember) {
+        throw new Error(
+          `Your personal space (${callerSpaceId}) is not a member/editor of DAO space ${spaceId}`
+        );
+      }
+
+      const result = await daoSpace.proposeEdit({
+        name: editName,
+        ops,
+        author: callerSpaceId as `0x${string}`,
+        network: "TESTNET",
+        callerSpaceId: `0x${callerSpaceId}` as `0x${string}`,
+        daoSpaceId: `0x${spaceId}` as `0x${string}`,
+        daoSpaceAddress: daoAddress as `0x${string}`,
+      });
+      ({ cid, editId, to, calldata } = result);
+    }
 
     const txHash = await (walletClient as any).sendTransaction({ to, data: calldata }) as `0x${string}`;
-
-    const publicClient = createPublicClient({ transport: http(TESTNET_RPC_URL) });
     await publicClient.waitForTransactionReceipt({ hash: txHash });
 
     return { success: true, spaceId, editId, cid, transactionHash: txHash };

@@ -1,11 +1,3 @@
-/**
- * Usage:
- *   npx tsx sdk/upload.ts <bounty-folder>
- *   npx tsx sdk/upload.ts <bounty-folder> --dry-run
- *
- * Each bounty folder needs config.json and data.json.
- */
-
 import "dotenv/config";
 import { readFileSync, existsSync } from "fs";
 import { join, resolve } from "path";
