@@ -1,7 +1,8 @@
 import { Graph } from "@geoprotocol/geo-sdk";
 import type { Op, Id } from "@geoprotocol/geo-sdk";
 import type { BountyConfig, FieldValueType, ResolvedField, ResolvedSchema } from "./types.js";
-import { searchEntityByName } from "./graph-client.js";
+import { searchEntityByName, searchEntityByNameAndType } from "./graph-client.js";
+import { TYPES } from "./constants.js";
 
 function toGeoDataType(t: FieldValueType): string {
   switch (t) {
@@ -25,7 +26,7 @@ function toGeoValueType(t: FieldValueType): "text" | "float" | "bool" | "date" {
 }
 
 async function resolveProperty(label: string, dataType: string, ops: Op[]): Promise<Id> {
-  const existing = await searchEntityByName(label);
+  const existing = await searchEntityByNameAndType(label, TYPES.property);
   if (existing) return existing as Id;
   const result = Graph.createProperty({ name: label, dataType: dataType as any });
   ops.push(...result.ops);
@@ -33,7 +34,7 @@ async function resolveProperty(label: string, dataType: string, ops: Op[]): Prom
 }
 
 async function resolveType(name: string, propertyIds: Id[], ops: Op[]): Promise<Id> {
-  const existing = await searchEntityByName(name);
+  const existing = await searchEntityByNameAndType(name, TYPES.type);
   if (existing) return existing as Id;
   const result = Graph.createType({ name, properties: propertyIds });
   ops.push(...result.ops);

@@ -9,7 +9,7 @@ import {
 import { SpaceRegistryAbi } from "@geoprotocol/geo-sdk/abis";
 import { TESTNET } from "@geoprotocol/geo-sdk/contracts";
 import type { Op } from "@geoprotocol/geo-sdk";
-import { TESTNET_API_URL } from "./constants.js";
+import { TESTNET_API_URL, TYPES } from "./constants.js";
 
 export async function gql(query: string, variables?: Record<string, unknown>): Promise<any> {
   const res = await fetch(TESTNET_API_URL, {
@@ -38,6 +38,36 @@ export async function searchEntityByName(name: string): Promise<string | null> {
     return hit?.id ?? null;
   } catch {
     return null;
+  }
+}
+
+/**
+ * Search for an entity by name, scoped to a specific Geo type ID.
+ * Prevents false matches when multiple entities share the same name
+ * but have different types. Falls back to generic search on API error.
+ */
+export async function searchEntityByNameAndType(
+  name: string,
+  typeId: string
+): Promise<string | null> {
+  try {
+    const data = await gql(`{
+      entities(filter: {
+        types: { some: { typeId: { is: ${JSON.stringify(typeId)} } } }
+        name: { is: ${JSON.stringify(name)} }
+      }) {
+        id
+        name
+      }
+    }`);
+    const entities: { id: string; name: string }[] = data?.entities ?? [];
+    const hit = entities.find(
+      (e) => e.name?.toLowerCase() === name.toLowerCase()
+    );
+    return hit?.id ?? null;
+  } catch {
+    // Fall back to generic search if the API doesn't support the filter
+    return searchEntityByName(name);
   }
 }
 
@@ -121,7 +151,7 @@ export async function publishOps(config: PublishConfig): Promise<PublishResult> 
         name: editName,
         spaceId,
         ops,
-        author: spaceId as `0x${string}`,
+        author: address as `0x${string}`,
         network: "TESTNET",
       });
       ({ cid, editId, to, calldata } = result);
@@ -151,7 +181,7 @@ export async function publishOps(config: PublishConfig): Promise<PublishResult> 
       const result = await daoSpace.proposeEdit({
         name: editName,
         ops,
-        author: callerSpaceId as `0x${string}`,
+        author: address as `0x${string}`,
         network: "TESTNET",
         callerSpaceId: `0x${callerSpaceId}` as `0x${string}`,
         daoSpaceId: `0x${spaceId}` as `0x${string}`,
