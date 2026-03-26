@@ -424,6 +424,25 @@
     "apiUrl": "https://api.gnosisscan.io/api"
   },
   {
+    "name": "Gnosis Beacon Chain Explorer",
+    "description": "Gnosis Beacon Chain Explorer is the official validator and staking explorer for the Gnosis Beacon Chain, built by Bitfly. It provides detailed data on validators, epochs, slots, and staking rewards on the Gnosis network.",
+    "website": "https://beaconchain.gnosischain.com",
+    "networks": "Gnosis Chain",
+    "launched": 2021,
+    "github": "https://github.com/gobitfly/eth2-beaconchain-explorer",
+    "docs": "https://beaconchain.gnosischain.com/api/v1/docs/index.html",
+    "apiUrl": "https://beaconchain.gnosischain.com/api/v1"
+  },
+  {
+    "name": "3xpl",
+    "description": "3xpl is a universal blockchain explorer supporting 48+ blockchains including Gnosis Chain, offering lightning-fast block and transaction lookup with no ads and maximum privacy.",
+    "website": "https://3xpl.com",
+    "networks": "Gnosis Chain",
+    "launched": 2022,
+    "x": "https://x.com/3xplcom",
+    "github": "https://github.com/3xplcom"
+  },
+  {
     "name": "Cronoscan",
     "description": "Cronoscan is the leading block explorer for the Cronos blockchain, the EVM-compatible chain developed by Crypto.com.",
     "website": "https://cronoscan.com",
