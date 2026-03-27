@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { readFileSync, existsSync } from "fs";
+import { readFileSync, readdirSync } from "fs";
 import { join, resolve } from "path";
 import type { BountyConfig } from "./core/types.js";
 import { resolveSchema, importRecords } from "./core/importer.js";
@@ -15,11 +15,24 @@ if (!bountyArg) {
 }
 
 const bountyDir = resolve(bountyArg);
-const configPath = join(bountyDir, "config.json");
-const dataPath = join(bountyDir, "data.json");
+const files = readdirSync(bountyDir).filter((f) => f.endsWith(".json"));
 
-if (!existsSync(configPath)) { console.error(`Missing: ${configPath}`); process.exit(1); }
-if (!existsSync(dataPath))   { console.error(`Missing: ${dataPath}`);   process.exit(1); }
+const configFile = files.find((f) => f.endsWith("-config.json"));
+const dataFile   = files.find((f) => f.endsWith("-data.json"));
+
+if (!configFile) {
+  console.error(`No *-config.json found in ${bountyDir}`);
+  console.error(`Files found: ${files.join(", ") || "none"}`);
+  process.exit(1);
+}
+if (!dataFile) {
+  console.error(`No *-data.json found in ${bountyDir}`);
+  console.error(`Files found: ${files.join(", ") || "none"}`);
+  process.exit(1);
+}
+
+const configPath = join(bountyDir, configFile);
+const dataPath   = join(bountyDir, dataFile);
 
 const config: BountyConfig = JSON.parse(readFileSync(configPath, "utf-8"));
 const records: Record<string, unknown>[] = JSON.parse(readFileSync(dataPath, "utf-8"));
