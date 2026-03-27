@@ -26,13 +26,29 @@ npx tsx sdk/upload.ts bounties/block-explorers
 
 ## Adding a new bounty
 
-Create a folder under `bounties/<name>/` with two files:
+Create a folder under `bounties/<name>/` with two files. File names don't matter — the SDK detects the config by the presence of a `bountyName` field and the data by being a JSON array.
 
-**config.json** — defines the entity type and fields. Use the block-explorers bounty as a reference. Field types: `text`, `url`, `int64`, `float64`, `bool`, `date`, `relation`.
+**config.json** — defines the entity type and fields.
 
-For fields that map to a Geo root space property (name, description, web url, etc.), add `wellKnownPropertyId` with the ID from `sdk/core/constants.ts` — this reuses the existing property instead of creating a new one.
+```json
+{
+  "bountyName": "My bounty",
+  "editName": "Add my bounty data",
+  "entityTypeName": "MyType",
+  "wellKnownEntityTypeId": "<existing Geo type ID, if the type already exists>",
+  "fields": [
+    { "key": "name", "label": "Name", "type": "text", "wellKnownPropertyId": "a126ca530c8e48d5b88882c734c38935", "required": true },
+    { "key": "website", "label": "Website", "type": "url", "wellKnownPropertyId": "<ID>" },
+    { "key": "relatedEntity", "label": "Related entity", "type": "relation", "relationEntityType": "SomeType" }
+  ]
+}
+```
 
-Property labels follow sentence case: `"Supported networks"`, `"Api url"`.
+Field types: `text`, `url`, `int64`, `float64`, `bool`, `date`, `relation`.
+
+Use `wellKnownEntityTypeId` to point to a type that already exists in Geo — the SDK will use it directly without creating a new one.
+
+Use `wellKnownPropertyId` on any field to point to a property that already exists in Geo — the SDK will use it directly without creating a new one. Property IDs for common Geo root space properties are in `sdk/core/constants.ts`.
 
 **data.json** — array of records. Each key must match a field key in config.json. Missing optional fields are skipped. Records already in Geo by name are skipped automatically.
 
@@ -40,4 +56,5 @@ Property labels follow sentence case: `"Supported networks"`, `"Api url"`.
 
 | Folder | Entity type | Records |
 |---|---|---|
-| `block-explorers` | Block explorer | 47 |
+| `block-explorers` | Explorer | 49 |
+| `networks` | Network | 39 |
