@@ -90,8 +90,14 @@ export async function resolveSchema(config: BountyConfig): Promise<ResolvedSchem
   }
 
   console.log(`\n  Resolving entity type "${config.entityTypeName}"...`);
-  const entityTypeId = await resolveType(config.entityTypeName, allPropertyIds, schemaOps);
-  console.log(`    → ${entityTypeId}`);
+  let entityTypeId: Id;
+  if (config.wellKnownEntityTypeId) {
+    entityTypeId = config.wellKnownEntityTypeId as Id;
+    console.log(`    [root] → ${entityTypeId}`);
+  } else {
+    entityTypeId = await resolveType(config.entityTypeName, allPropertyIds, schemaOps);
+    console.log(`    → ${entityTypeId}`);
+  }
 
   return { entityTypeId, fields: resolvedFields, schemaOps };
 }

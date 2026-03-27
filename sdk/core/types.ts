@@ -22,6 +22,7 @@ export interface BountyConfig {
   bountyName: string;
   editName: string;
   entityTypeName: string;
+  wellKnownEntityTypeId?: string;
   fields: FieldConfig[];
 }
 

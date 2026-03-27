@@ -1,7 +1,8 @@
 {
   "bountyName": "Block explorers for major networks",
   "editName": "Add block explorers for major networks",
-  "entityTypeName": "Block explorer",
+  "entityTypeName": "Explorer",
+  "wellKnownEntityTypeId": "e5a3d6e264b95a5f9c8245870b7d405e",
   "fields": [
     {
       "key": "name",
@@ -24,38 +25,45 @@
     },
     {
       "key": "networks",
-      "label": "Supported networks",
-      "type": "text"
+      "label": "Networks",
+      "type": "text",
+      "wellKnownPropertyId": "c78b6a7c5942419daa4544f31a47cf7d"
     },
     {
       "key": "launched",
       "label": "Launched",
-      "type": "int64"
+      "type": "int64",
+      "wellKnownPropertyId": "6c65c1ee3453ae4d03adeccc48633e77"
     },
     {
       "key": "x",
       "label": "X",
-      "type": "url"
+      "type": "url",
+      "wellKnownPropertyId": "0d6259784b3c4b57a86fde45c997c73c"
     },
     {
       "key": "linkedin",
       "label": "LinkedIn",
-      "type": "url"
+      "type": "url",
+      "wellKnownPropertyId": "cdf139bce610446cac42d57cd7967478"
     },
     {
       "key": "github",
       "label": "GitHub",
-      "type": "url"
+      "type": "url",
+      "wellKnownPropertyId": "9eedefa860ae4ac19a04805054a4b094"
     },
     {
       "key": "docs",
-      "label": "Docs url",
-      "type": "url"
+      "label": "Docs",
+      "type": "url",
+      "wellKnownPropertyId": "a446528df6b24ecab04bc4dd7dedfbd9"
     },
     {
       "key": "apiUrl",
-      "label": "Api url",
-      "type": "url"
+      "label": "API URL",
+      "type": "url",
+      "wellKnownPropertyId": "d9bb17febef44860b9ae531210612271"
     }
   ]
 }
