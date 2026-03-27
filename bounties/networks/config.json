@@ -1,0 +1,37 @@
+{
+  "bountyName": "Networks for block explorers",
+  "editName": "Add networks for block explorers",
+  "entityTypeName": "Network",
+  "fields": [
+    {
+      "key": "name",
+      "label": "Name",
+      "type": "text",
+      "wellKnownPropertyId": "a126ca530c8e48d5b88882c734c38935",
+      "required": true
+    },
+    {
+      "key": "description",
+      "label": "Description",
+      "type": "text",
+      "wellKnownPropertyId": "9b1f76ff9711404c861e59dc3fa7d037"
+    },
+    {
+      "key": "nativeAsset",
+      "label": "Native asset",
+      "type": "text"
+    },
+    {
+      "key": "primaryExplorer",
+      "label": "Primary explorer",
+      "type": "relation",
+      "relationEntityType": "Block explorer"
+    },
+    {
+      "key": "secondaryExplorer",
+      "label": "Secondary explorer",
+      "type": "relation",
+      "relationEntityType": "Block explorer"
+    }
+  ]
+}

@@ -1,0 +1,275 @@
+[
+  {
+    "name": "Ethereum",
+    "description": "The leading decentralized smart contract platform enabling DeFi, NFTs, and dApps through its EVM. It transitioned to proof-of-stake via The Merge in 2022.",
+    "nativeAsset": "Ether",
+    "primaryExplorer": "Etherscan",
+    "secondaryExplorer": "Blockscout"
+  },
+  {
+    "name": "Bitcoin",
+    "description": "The world's first decentralized peer-to-peer digital currency, created by Satoshi Nakamoto in 2009 and secured by proof-of-work mining.",
+    "nativeAsset": "Bitcoin",
+    "primaryExplorer": "Mempool.space",
+    "secondaryExplorer": "Blockchain.com Explorer"
+  },
+  {
+    "name": "Solana",
+    "description": "A high-performance Layer-1 blockchain using Proof of History and Proof of Stake, capable of processing thousands of transactions per second with low fees.",
+    "nativeAsset": "Solana",
+    "primaryExplorer": "Solscan",
+    "secondaryExplorer": "Solana Explorer"
+  },
+  {
+    "name": "Avalanche",
+    "description": "A Layer-1 blockchain with a multi-chain architecture (C-Chain, X-Chain, P-Chain) offering high throughput and sub-second finality via the Avalanche consensus protocol.",
+    "nativeAsset": "Avalanche",
+    "primaryExplorer": "Avascan",
+    "secondaryExplorer": "SnowScan"
+  },
+  {
+    "name": "Cardano",
+    "description": "A peer-reviewed proof-of-stake blockchain developed by IOHK, featuring the Ouroboros consensus protocol and native multi-asset and NFT support.",
+    "nativeAsset": "Cardano",
+    "primaryExplorer": "CardanoScan",
+    "secondaryExplorer": "Adastat"
+  },
+  {
+    "name": "XRP Ledger",
+    "description": "The XRP Ledger is a fast, energy-efficient public blockchain built for global payments, featuring a built-in DEX, NFT support, and the XRP Consensus Protocol.",
+    "nativeAsset": "XRP",
+    "primaryExplorer": "XRPScan",
+    "secondaryExplorer": "Bithomp"
+  },
+  {
+    "name": "Starknet",
+    "description": "A permissionless ZK rollup on Ethereum developed by StarkWare, using STARK cryptographic proofs for scalable computation with native account abstraction.",
+    "nativeAsset": "Starknet",
+    "primaryExplorer": "Starkscan",
+    "secondaryExplorer": "Voyager"
+  },
+  {
+    "name": "Ethereum Classic",
+    "description": "The original Ethereum blockchain that preserved immutability after the 2016 DAO hack, supporting smart contracts and secured by proof-of-work.",
+    "nativeAsset": "Ethereum Classic",
+    "primaryExplorer": "Blockscout (ETC)",
+    "secondaryExplorer": "OKLink"
+  },
+  {
+    "name": "Gnosis",
+    "description": "Gnosis Chain (formerly xDai Chain) is a stable, EVM-compatible Layer-1 blockchain using xDAI as its gas token, secured by a permissionless set of validators.",
+    "nativeAsset": "xDai",
+    "primaryExplorer": "Gnosisscan",
+    "secondaryExplorer": "Blockscout"
+  },
+  {
+    "name": "Base",
+    "description": "An Ethereum Layer-2 network built by Coinbase using the OP Stack, offering low-cost EVM-compatible transactions with seamless access to Coinbase's ecosystem.",
+    "nativeAsset": "Ether",
+    "primaryExplorer": "BaseScan",
+    "secondaryExplorer": "Blockscout"
+  },
+  {
+    "name": "Optimism",
+    "description": "An Ethereum Layer-2 optimistic rollup providing EVM-equivalent scalability with a fraud-proof security model, governed by the Optimism Collective.",
+    "nativeAsset": "Ether",
+    "primaryExplorer": "Optimistic Etherscan",
+    "secondaryExplorer": "Blockscout"
+  },
+  {
+    "name": "Arbitrum One",
+    "description": "An Ethereum Layer-2 optimistic rollup developed by Offchain Labs, delivering high throughput and low fees with full EVM compatibility.",
+    "nativeAsset": "Ether",
+    "primaryExplorer": "Arbiscan",
+    "secondaryExplorer": "Blockscout"
+  },
+  {
+    "name": "Polygon",
+    "description": "Polygon PoS is an EVM-compatible proof-of-stake commit chain anchored to Ethereum, providing fast and affordable transactions for DeFi and dApp protocols.",
+    "nativeAsset": "Polygon Ecosystem Token",
+    "primaryExplorer": "Polygonscan",
+    "secondaryExplorer": "Blockscout"
+  },
+  {
+    "name": "zkSync Era",
+    "description": "An EVM-compatible ZK rollup developed by Matter Labs, using zero-knowledge proofs for secure and scalable Ethereum transactions with native account abstraction.",
+    "nativeAsset": "Ether",
+    "primaryExplorer": "zkSync Explorer",
+    "secondaryExplorer": "Blockscout"
+  },
+  {
+    "name": "Scroll",
+    "description": "A native zkEVM Layer-2 on Ethereum providing bytecode-level EVM equivalence using zero-knowledge proof verification for trustless and scalable transactions.",
+    "nativeAsset": "Ether",
+    "primaryExplorer": "Scrollscan",
+    "secondaryExplorer": "Blockscout"
+  },
+  {
+    "name": "Linea",
+    "description": "An EVM-equivalent ZK rollup developed by ConsenSys, designed for seamless compatibility with Ethereum tooling while offering significantly reduced transaction costs.",
+    "nativeAsset": "Ether",
+    "primaryExplorer": "Lineascan",
+    "secondaryExplorer": "Blockscout"
+  },
+  {
+    "name": "BNB Smart Chain",
+    "description": "A high-performance EVM-compatible blockchain developed by Binance, supporting DeFi, NFTs, and Web3 applications with low transaction fees.",
+    "nativeAsset": "BNB",
+    "primaryExplorer": "BscScan",
+    "secondaryExplorer": "OKLink"
+  },
+  {
+    "name": "Tron",
+    "description": "A high-throughput Layer-1 blockchain focused on digital entertainment and content distribution, featuring a large DeFi ecosystem and the world's largest USDT circulation.",
+    "nativeAsset": "TRON",
+    "primaryExplorer": "Tronscan",
+    "secondaryExplorer": "OKLink"
+  },
+  {
+    "name": "Sonic",
+    "description": "An EVM-compatible Layer-1 blockchain evolved from Fantom Opera, offering sub-second finality and a developer fee monetization program via Sonic Labs.",
+    "nativeAsset": "Sonic",
+    "primaryExplorer": "SonicScan",
+    "secondaryExplorer": "Routescan"
+  },
+  {
+    "name": "Near Protocol",
+    "description": "A sharded, proof-of-stake Layer-1 blockchain designed for usability and scalability, featuring human-readable account names and low-cost smart contracts.",
+    "nativeAsset": "NEAR",
+    "primaryExplorer": "NearBlocks",
+    "secondaryExplorer": "NEAR Explorer"
+  },
+  {
+    "name": "Algorand",
+    "description": "A pure proof-of-stake Layer-1 blockchain offering instant transaction finality, carbon neutrality, and support for smart contracts and digital assets via AVM.",
+    "nativeAsset": "Algorand",
+    "primaryExplorer": "Allo.info",
+    "secondaryExplorer": "Pera Explorer"
+  },
+  {
+    "name": "Cosmos Hub",
+    "description": "The central blockchain of the Cosmos ecosystem, enabling inter-blockchain communication (IBC) between sovereign chains and serving as the network's main security hub.",
+    "nativeAsset": "Cosmos",
+    "primaryExplorer": "Mintscan",
+    "secondaryExplorer": "Big Dipper"
+  },
+  {
+    "name": "Polkadot",
+    "description": "A multichain network developed by Parity Technologies enabling interoperability between specialized blockchains called parachains via a central Relay Chain.",
+    "nativeAsset": "Polkadot",
+    "primaryExplorer": "Subscan",
+    "secondaryExplorer": "Polkascan"
+  },
+  {
+    "name": "Stellar",
+    "description": "An open-source payment network designed for fast, affordable cross-border transactions and digital asset issuance, widely adopted by financial institutions globally.",
+    "nativeAsset": "Lumen",
+    "primaryExplorer": "Stellar Expert",
+    "secondaryExplorer": "StellarChain"
+  },
+  {
+    "name": "Tezos",
+    "description": "A self-amending Layer-1 blockchain using liquid proof-of-stake, featuring on-chain governance and formal verification of smart contracts written in Michelson.",
+    "nativeAsset": "Tezos",
+    "primaryExplorer": "TzKT",
+    "secondaryExplorer": "Better Call Dev"
+  },
+  {
+    "name": "Hedera",
+    "description": "A public distributed ledger using hashgraph consensus, offering high-throughput, low-latency transactions governed by a council of leading global enterprises.",
+    "nativeAsset": "Hedera",
+    "primaryExplorer": "HashScan",
+    "secondaryExplorer": "DragonGlass"
+  },
+  {
+    "name": "Aptos",
+    "description": "A Layer-1 blockchain developed by former Meta engineers using the Move programming language, featuring parallel transaction execution for high throughput and safety.",
+    "nativeAsset": "Aptos",
+    "primaryExplorer": "Aptos Explorer",
+    "secondaryExplorer": "AptScan"
+  },
+  {
+    "name": "Sui",
+    "description": "A Layer-1 blockchain developed by Mysten Labs using the Move language, featuring an object-centric data model and parallel transaction processing for high performance.",
+    "nativeAsset": "Sui",
+    "primaryExplorer": "SuiVision",
+    "secondaryExplorer": "SuiScan"
+  },
+  {
+    "name": "Sei",
+    "description": "A Layer-1 blockchain optimized for trading applications, featuring parallelized EVM execution, twin-turbo consensus, and native order book primitives in the protocol.",
+    "nativeAsset": "Sei",
+    "primaryExplorer": "Seitrace",
+    "secondaryExplorer": "SeiScan"
+  },
+  {
+    "name": "Kaia",
+    "description": "Kaia (formerly Klaytn) is an EVM-compatible Layer-1 blockchain developed by the Kaia DLT Foundation, focusing on Web3 accessibility and enterprise adoption in Asia.",
+    "nativeAsset": "Kaia",
+    "primaryExplorer": "Kaiascan",
+    "secondaryExplorer": "OKLink"
+  },
+  {
+    "name": "Harmony",
+    "description": "A sharded proof-of-stake Layer-1 blockchain focused on cross-chain bridging and decentralized applications, using effective proof-of-stake for fast finality.",
+    "nativeAsset": "Harmony",
+    "primaryExplorer": "Harmony Explorer",
+    "secondaryExplorer": "Blockscout"
+  },
+  {
+    "name": "Blast",
+    "description": "An Ethereum Layer-2 optimistic rollup offering native yield for ETH and stablecoins through automatic rebasing, built by the team behind the Blur NFT marketplace.",
+    "nativeAsset": "Ether",
+    "primaryExplorer": "Blastscan",
+    "secondaryExplorer": "Blockscout"
+  },
+  {
+    "name": "Mantle",
+    "description": "An Ethereum Layer-2 network using optimistic rollup technology with modular data availability via EigenDA, using MNT as its native gas token.",
+    "nativeAsset": "Mantle",
+    "primaryExplorer": "MantleScan",
+    "secondaryExplorer": "Mantle Explorer"
+  },
+  {
+    "name": "Metis",
+    "description": "An Ethereum Layer-2 optimistic rollup featuring decentralized sequencers and hybrid rollup technology for improved censorship resistance and performance.",
+    "nativeAsset": "Metis",
+    "primaryExplorer": "Metis Explorer",
+    "secondaryExplorer": "Andromeda Explorer"
+  },
+  {
+    "name": "Boba Network",
+    "description": "An Ethereum Layer-2 optimistic rollup featuring Hybrid Compute, allowing smart contracts to invoke off-chain data and computational resources.",
+    "nativeAsset": "Ether",
+    "primaryExplorer": "Bobascan",
+    "secondaryExplorer": "Boba Network Explorer"
+  },
+  {
+    "name": "Moonbeam",
+    "description": "A fully Ethereum-compatible smart contract parachain on Polkadot, enabling deployment of Ethereum dApps with minimal code modifications.",
+    "nativeAsset": "Glimmer",
+    "primaryExplorer": "Moonscan",
+    "secondaryExplorer": "Blockscout"
+  },
+  {
+    "name": "Moonriver",
+    "description": "The canary network of Moonbeam deployed on Kusama, providing an Ethereum-compatible environment for testing and deploying new code in a live incentivized network.",
+    "nativeAsset": "Moonriver",
+    "primaryExplorer": "Moonriver Moonscan",
+    "secondaryExplorer": "Blockscout"
+  },
+  {
+    "name": "Celo",
+    "description": "An EVM-compatible Layer-1 blockchain focused on mobile-first financial inclusion, offering stable assets and fast, low-cost transactions for global DeFi access.",
+    "nativeAsset": "Celo",
+    "primaryExplorer": "Celoscan",
+    "secondaryExplorer": "Blockscout"
+  },
+  {
+    "name": "Aurora",
+    "description": "An Ethereum Virtual Machine running on the NEAR Protocol, providing Ethereum developers a familiar environment with NEAR's scalability and near-zero transaction fees.",
+    "nativeAsset": "Ether",
+    "primaryExplorer": "Aurora Explorer",
+    "secondaryExplorer": "AuroraScan"
+  }
+]
