@@ -226,8 +226,8 @@
     "apiUrl": "https://api.tzkt.io"
   },
   {
-    "name": "Blockscout (ETC)",
-    "description": "Blockscout is the official open-source block explorer for Ethereum Classic, providing full visibility into transactions, blocks, and smart contracts.",
+    "name": "Ethereum Classic explorer",
+    "description": "The official open-source block explorer for Ethereum Classic, powered by Blockscout, providing full visibility into transactions, blocks, and smart contracts.",
     "website": "https://etc.blockscout.com",
     "networks": "Ethereum Classic",
     "launched": 2022,
@@ -491,5 +491,136 @@
     "x": "https://x.com/auroraisnear",
     "github": "https://github.com/aurora-is-near",
     "docs": "https://explorer.mainnet.aurora.dev/api-docs"
+  },
+  {
+    "name": "OKLink",
+    "description": "A multi-chain blockchain explorer and on-chain analytics platform developed by OKG Technology, offering transaction lookup, address monitoring, and data insights across 50+ blockchains.",
+    "website": "https://www.oklink.com",
+    "networks": "Multi-chain",
+    "launched": 2018,
+    "x": "https://x.com/OKLink",
+    "linkedin": "https://www.linkedin.com/company/oklink",
+    "docs": "https://www.oklink.com/docs/en/",
+    "apiUrl": "https://www.oklink.com/api/v5/explorer"
+  },
+  {
+    "name": "Routescan",
+    "description": "A multi-chain blockchain explorer and API infrastructure provider for EVM-compatible networks, offering transaction lookup, contract verification, and analytics for 100+ chains.",
+    "website": "https://routescan.io",
+    "networks": "Multi-chain",
+    "launched": 2021,
+    "x": "https://x.com/routescan_io",
+    "docs": "https://routescan.io/documentation",
+    "apiUrl": "https://api.routescan.io"
+  },
+  {
+    "name": "NEAR Explorer",
+    "description": "The original official blockchain explorer for the NEAR Protocol, providing data on transactions, accounts, blocks, and network statistics, maintained by NEAR Inc.",
+    "website": "https://explorer.near.org",
+    "networks": "Near Protocol",
+    "launched": 2020,
+    "github": "https://github.com/near/near-explorer"
+  },
+  {
+    "name": "Pera Explorer",
+    "description": "A blockchain explorer for the Algorand network developed by Pera, providing detailed views of transactions, accounts, assets, and smart contracts.",
+    "website": "https://explorer.perawallet.app",
+    "networks": "Algorand",
+    "launched": 2022,
+    "x": "https://x.com/PeraAlgo"
+  },
+  {
+    "name": "Big Dipper",
+    "description": "An open-source multi-chain blockchain explorer for Cosmos-based networks developed by Forbole, providing validator data, governance proposals, and staking analytics.",
+    "website": "https://bigdipper.live",
+    "networks": "Cosmos Hub",
+    "launched": 2019,
+    "x": "https://x.com/forbole",
+    "github": "https://github.com/forbole/big-dipper-2.0-cosmos"
+  },
+  {
+    "name": "Polkascan",
+    "description": "An open-source blockchain explorer for Polkadot and Substrate-based networks developed by Polkascan Foundation, providing detailed extrinsic and event-level chain data.",
+    "website": "https://explorer.polkascan.io",
+    "networks": "Polkadot",
+    "launched": 2019,
+    "x": "https://x.com/polkascan",
+    "github": "https://github.com/polkascan/polkascan-os"
+  },
+  {
+    "name": "StellarChain",
+    "description": "A blockchain explorer for the Stellar network offering transaction lookup, account analytics, asset tracking, and DEX order book data on the Stellar ledger.",
+    "website": "https://stellarchain.io",
+    "networks": "Stellar",
+    "launched": 2017
+  },
+  {
+    "name": "Better Call Dev",
+    "description": "A smart contract explorer and developer tool for the Tezos blockchain by Baking Bad, focused on contract storage inspection, entrypoint interactions, and on-chain event indexing.",
+    "website": "https://better-call.dev",
+    "networks": "Tezos",
+    "launched": 2020,
+    "x": "https://x.com/baking_bad_team",
+    "github": "https://github.com/baking-bad/bcdhub"
+  },
+  {
+    "name": "DragonGlass",
+    "description": "A blockchain analytics and explorer platform for the Hedera network, providing transaction history, token analytics, smart contract data, and real-time account tracking.",
+    "website": "https://app.dragonglass.me",
+    "networks": "Hedera",
+    "launched": 2018,
+    "x": "https://x.com/DragonGlassHE"
+  },
+  {
+    "name": "AptScan",
+    "description": "A blockchain explorer and analytics platform for the Aptos network, providing transaction lookup, account tracking, token analytics, and smart contract insights.",
+    "website": "https://aptscan.ai",
+    "networks": "Aptos",
+    "launched": 2022,
+    "x": "https://x.com/aptscan_ai"
+  },
+  {
+    "name": "SuiScan",
+    "description": "A blockchain explorer for the Sui network providing detailed views of transactions, objects, coins, validator activity, and network statistics.",
+    "website": "https://suiscan.xyz",
+    "networks": "Sui",
+    "launched": 2023,
+    "x": "https://x.com/suiscanxyz"
+  },
+  {
+    "name": "SeiScan",
+    "description": "A blockchain explorer for the Sei network offering transaction lookup, contract analytics, and token tracking across both EVM and Cosmos-native Sei chain activity.",
+    "website": "https://www.seiscan.app",
+    "networks": "Sei",
+    "launched": 2023
+  },
+  {
+    "name": "Andromeda Explorer",
+    "description": "An alternative block explorer for the Metis Andromeda Layer-2 network, powered by Blockscout, providing transaction history, smart contract data, and token analytics.",
+    "website": "https://andromeda-explorer.metis.io",
+    "networks": "Metis",
+    "launched": 2021
+  },
+  {
+    "name": "Mantle Explorer",
+    "description": "An alternative block explorer for Mantle Network powered by Blockscout, providing transaction history, smart contract verification, and token analytics.",
+    "website": "https://explorer.mantle.xyz",
+    "networks": "Mantle",
+    "launched": 2023
+  },
+  {
+    "name": "Boba Network Explorer",
+    "description": "The legacy official block explorer for Boba Network, an Ethereum Layer-2 optimistic rollup, providing transaction lookup and smart contract data.",
+    "website": "https://blockexplorer.boba.network",
+    "networks": "Boba Network",
+    "launched": 2021
+  },
+  {
+    "name": "AuroraScan",
+    "description": "A blockchain explorer for Aurora, an EVM environment on NEAR Protocol, offering transaction lookup, token analytics, and smart contract verification powered by Etherscan.",
+    "website": "https://aurorascan.dev",
+    "networks": "Aurora",
+    "launched": 2022,
+    "x": "https://x.com/auroraisnear"
   }
 ]

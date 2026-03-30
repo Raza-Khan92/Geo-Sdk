@@ -52,7 +52,7 @@
     "name": "Ethereum Classic",
     "description": "The original Ethereum blockchain that preserved immutability after the 2016 DAO hack, supporting smart contracts and secured by proof-of-work.",
     "nativeAsset": "Ethereum Classic",
-    "primaryExplorer": "Blockscout (ETC)",
+    "primaryExplorer": "Ethereum Classic explorer",
     "secondaryExplorer": "OKLink"
   },
   {

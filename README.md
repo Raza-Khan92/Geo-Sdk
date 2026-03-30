@@ -56,5 +56,5 @@ Use `wellKnownPropertyId` on any field to point to a property that already exist
 
 | Folder | Entity type | Records |
 |---|---|---|
-| `block-explorers` | Explorer | 49 |
+| `block-explorers` | Explorer | 65 |
 | `networks` | Network | 39 |
