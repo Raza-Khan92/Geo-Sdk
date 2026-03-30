@@ -574,7 +574,7 @@
   {
     "name": "AptScan",
     "description": "A blockchain explorer and analytics platform for the Aptos network, providing transaction lookup, account tracking, token analytics, and smart contract insights.",
-    "website": "https://aptscan.ai",
+    "website": "https://aptoscan.com",
     "networks": "Aptos",
     "launched": 2022,
     "x": "https://x.com/aptscan_ai"
@@ -604,21 +604,21 @@
   {
     "name": "Mantle Explorer",
     "description": "An alternative block explorer for Mantle Network powered by Blockscout, providing transaction history, smart contract verification, and token analytics.",
-    "website": "https://explorer.mantle.xyz",
+    "website": "https://mantlescan.xyz",
     "networks": "Mantle",
     "launched": 2023
   },
   {
     "name": "Boba Network Explorer",
     "description": "The legacy official block explorer for Boba Network, an Ethereum Layer-2 optimistic rollup, providing transaction lookup and smart contract data.",
-    "website": "https://blockexplorer.boba.network",
+    "website": "https://bobascan.com",
     "networks": "Boba Network",
     "launched": 2021
   },
   {
     "name": "AuroraScan",
     "description": "A blockchain explorer for Aurora, an EVM environment on NEAR Protocol, offering transaction lookup, token analytics, and smart contract verification powered by Etherscan.",
-    "website": "https://aurorascan.dev",
+    "website": "https://explorer.aurora.dev",
     "networks": "Aurora",
     "launched": 2022,
     "x": "https://x.com/auroraisnear"
