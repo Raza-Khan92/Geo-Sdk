@@ -5,9 +5,9 @@ import type { BountyConfig, FieldValueType, ResolvedField, ResolvedSchema } from
 import { searchEntityByName, searchEntityByNameAndType } from "./graph-client.js";
 import { TYPES } from "./constants.js";
 
-// Generate a deterministic UUID from a string using SHA-256 hash
+// Generate a deterministic UUID from a string using MD5 hash
 function derivedUuidFromString(input: string): Id {
-  const hash = createHash('sha256').update(input).digest('hex');
+  const hash = createHash('md5').update(input).digest('hex');
   // Format as UUID: 8-4-4-4-12
   const uuid = `${hash.slice(0, 8)}-${hash.slice(8, 12)}-${hash.slice(12, 16)}-${hash.slice(16, 20)}-${hash.slice(20, 32)}`;
   return uuid as Id;
@@ -37,23 +37,23 @@ export function toGeoValueType(t: FieldValueType): "text" | "float" | "bool" | "
   }
 }
 
-async function resolveProperty(label: string, dataType: string, ops: Op[]): Promise<Id> {
-  const existing = await searchEntityByNameAndType(label, TYPES.property);
+async function resolveProperty(label: string, dataType: string, ops: Op[], spaceId?: string): Promise<Id> {
+  const existing = await searchEntityByNameAndType(label, TYPES.property, spaceId);
   if (existing) return existing as Id;
   const result = Graph.createProperty({ name: label, dataType: dataType as any });
   ops.push(...result.ops);
   return result.id;
 }
 
-async function resolveType(name: string, propertyIds: Id[], ops: Op[]): Promise<Id> {
-  const existing = await searchEntityByNameAndType(name, TYPES.type);
+async function resolveType(name: string, propertyIds: Id[], ops: Op[], spaceId?: string): Promise<Id> {
+  const existing = await searchEntityByNameAndType(name, TYPES.type, spaceId);
   if (existing) return existing as Id;
   const result = Graph.createType({ name, properties: propertyIds });
   ops.push(...result.ops);
   return result.id;
 }
 
-export async function resolveSchema(config: BountyConfig): Promise<ResolvedSchema> {
+export async function resolveSchema(config: BountyConfig, spaceId?: string): Promise<ResolvedSchema> {
   const schemaOps: Op[] = [];
   const resolvedFields: ResolvedField[] = [];
   const allPropertyIds: Id[] = [];
@@ -69,7 +69,7 @@ export async function resolveSchema(config: BountyConfig): Promise<ResolvedSchem
       console.log(`    [root] ${field.label} → ${propertyId}`);
     } else {
       const dataType = toGeoDataType(field.type);
-      propertyId = await resolveProperty(field.label, dataType, schemaOps);
+      propertyId = await resolveProperty(field.label, dataType, schemaOps, spaceId);
       console.log(`    [prop] ${field.label} → ${propertyId}`);
     }
 
@@ -87,7 +87,7 @@ export async function resolveSchema(config: BountyConfig): Promise<ResolvedSchem
     if (field.type === "relation" && field.relationEntityType) {
       const typeName = field.relationEntityType;
       if (!relationTypeCache.has(typeName)) {
-        const typeId = await resolveType(typeName, [], schemaOps);
+        const typeId = await resolveType(typeName, [], schemaOps, spaceId);
         relationTypeCache.set(typeName, typeId);
         console.log(`    [reltype] ${typeName} → ${typeId}`);
       }
@@ -107,7 +107,7 @@ export async function resolveSchema(config: BountyConfig): Promise<ResolvedSchem
     entityTypeId = config.wellKnownEntityTypeId as Id;
     console.log(`    [root] → ${entityTypeId}`);
   } else {
-    entityTypeId = await resolveType(config.entityTypeName, allPropertyIds, schemaOps);
+    entityTypeId = await resolveType(config.entityTypeName, allPropertyIds, schemaOps, spaceId);
     console.log(`    → ${entityTypeId}`);
   }
 
@@ -176,6 +176,14 @@ export async function importRecords(
       } else {
         const valueType = toGeoValueType(field.type);
         const valueObj: any = { property: field.propertyId };
+        
+        // Validate int64 values for safe JavaScript number representation
+        if (field.type === "int64" && typeof raw === "number") {
+          if (raw > Number.MAX_SAFE_INTEGER || raw < Number.MIN_SAFE_INTEGER) {
+            console.warn(`  [warn] "${name}".${field.key}: int64 value ${raw} exceeds safe JavaScript integer range. Precision may be lost.`);
+          }
+        }
+        
         valueObj[valueType] = raw;
         values.push(valueObj);
       }

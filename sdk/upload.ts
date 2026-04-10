@@ -53,7 +53,7 @@ console.log(`  Records : ${records.length}${dryRun ? "  [DRY RUN]" : ""}`);
 console.log("═══════════════════════════════════════════════════");
 
 console.log("\nStep 1 — Resolving schema...");
-const schema = await resolveSchema(config);
+const schema = await resolveSchema(config, process.env.SPACE_ID);
 
 console.log("\nStep 2 — Building entity ops...");
 const { ops: entityOps, created, skipped } = await importRecords(records, schema, process.env.SPACE_ID);

@@ -72,27 +72,46 @@ export async function searchEntityByName(
 }
 
 /**
- * Search for an entity by name, scoped to a specific Geo type ID.
+ * Search for an entity by name, scoped to a specific Geo type ID and optionally to a space.
  * Prevents false matches when multiple entities share the same name
  * but have different types. Falls back to generic search on API error.
  */
 export async function searchEntityByNameAndType(
   name: string,
-  typeId: string
+  typeId: string,
+  spaceId?: string
 ): Promise<string | null> {
   try {
-    const data = await gql(
-      `query($name: String!, $typeId: String!) {
-        entities(filter: {
-          types: { some: { typeId: { is: $typeId } } }
-          name: { is: $name }
-        }) {
-          id
-          name
-        }
-      }`,
-      { name, typeId }
-    );
+    let query: string;
+    let variables: any = { name, typeId };
+    
+    if (spaceId) {
+      query = `
+        query($name: String!, $typeId: String!, $spaceId: String!) {
+          entities(filter: {
+            types: { some: { typeId: { is: $typeId } } }
+            name: { is: $name }
+            spaces: { some: { id: { is: $spaceId } } }
+          }) {
+            id
+            name
+          }
+        }`;
+      variables.spaceId = spaceId;
+    } else {
+      query = `
+        query($name: String!, $typeId: String!) {
+          entities(filter: {
+            types: { some: { typeId: { is: $typeId } } }
+            name: { is: $name }
+          }) {
+            id
+            name
+          }
+        }`;
+    }
+    
+    const data = await gql(query, variables);
     const entities: { id: string; name: string }[] = data?.entities ?? [];
     const hit = entities.find(
       (e) => e.name?.toLowerCase() === name.toLowerCase()
@@ -101,7 +120,7 @@ export async function searchEntityByNameAndType(
   } catch (err) {
     // Fall back to generic search if the API doesn't support the filter
     console.warn(`Type-scoped search failed for "${name}" (type ${typeId}): ${err}`);
-    return searchEntityByName(name);
+    return searchEntityByName(name, spaceId);
   }
 }
 
