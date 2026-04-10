@@ -5,15 +5,17 @@
   "type": "module",
   "scripts": {
     "upload": "npx tsx sdk/upload.ts",
-    "typecheck": "npx tsc --noEmit"
+    "typecheck": "npx tsc --noEmit",
+    "test": "vitest run"
   },
   "dependencies": {
-    "@geoprotocol/geo-sdk": "^0.7.0",
+    "@geoprotocol/geo-sdk": "^0.13.1",
     "dotenv": "^17.2.4"
   },
   "devDependencies": {
     "@types/node": "^25.2.2",
     "tsx": "^4.7.0",
-    "typescript": "^5.3.0"
+    "typescript": "^5.3.0",
+    "vitest": "^2.0.0"
   }
 }

@@ -1,4 +1,4 @@
-export const ROOT_SPACE_ID = "a19c345ab9866679b001d7d2138d88a1";
+export const ROOT_SPACE_ID = "08c4f09378584b7c9b94b82e471d5797";
 
 export const TESTNET_API_URL = "https://testnet-api.geobrowser.io/graphql";
 

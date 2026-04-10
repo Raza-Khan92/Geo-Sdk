@@ -1,10 +1,19 @@
 import { Graph } from "@geoprotocol/geo-sdk";
+import { createHash } from "crypto";
 import type { Op, Id } from "@geoprotocol/geo-sdk";
 import type { BountyConfig, FieldValueType, ResolvedField, ResolvedSchema } from "./types.js";
 import { searchEntityByName, searchEntityByNameAndType } from "./graph-client.js";
 import { TYPES } from "./constants.js";
 
-function toGeoDataType(t: FieldValueType): string {
+// Generate a deterministic UUID from a string using SHA-256 hash
+function derivedUuidFromString(input: string): Id {
+  const hash = createHash('sha256').update(input).digest('hex');
+  // Format as UUID: 8-4-4-4-12
+  const uuid = `${hash.slice(0, 8)}-${hash.slice(8, 12)}-${hash.slice(12, 16)}-${hash.slice(16, 20)}-${hash.slice(20, 32)}`;
+  return uuid as Id;
+}
+
+export function toGeoDataType(t: FieldValueType): "TEXT" | "INT64" | "FLOAT64" | "BOOLEAN" | "DATE" | "RELATION" {
   switch (t) {
     case "text": case "url": return "TEXT";
     case "int64":            return "INT64";
@@ -15,10 +24,13 @@ function toGeoDataType(t: FieldValueType): string {
   }
 }
 
-function toGeoValueType(t: FieldValueType): "text" | "float" | "bool" | "date" {
+// Note: int64 is mapped to "float" because JavaScript's number type cannot
+// safely represent all int64 values (precision loss above Number.MAX_SAFE_INTEGER).
+// This is safe for small integers (e.g., year fields) but not for arbitrary int64.
+export function toGeoValueType(t: FieldValueType): "text" | "float" | "bool" | "date" {
   switch (t) {
     case "text": case "url": return "text";
-    case "int64": case "float64": return "float";
+    case "int64": case "float64": return "float"; // JS number; unsafe for large int64
     case "bool":  return "bool";
     case "date":  return "date";
     default:      return "text";
@@ -104,7 +116,8 @@ export async function resolveSchema(config: BountyConfig): Promise<ResolvedSchem
 
 export async function importRecords(
   records: Record<string, unknown>[],
-  schema: ResolvedSchema
+  schema: ResolvedSchema,
+  spaceId?: string
 ): Promise<{ ops: Op[]; created: number; skipped: number }> {
   const ops: Op[] = [];
   let created = 0;
@@ -133,7 +146,7 @@ export async function importRecords(
       continue;
     }
 
-    const existingId = await searchEntityByName(name);
+    const existingId = await searchEntityByName(name, spaceId);
     if (existingId) {
       console.log(`  [exists] "${name}" (${existingId})`);
       skipped++;
@@ -148,15 +161,31 @@ export async function importRecords(
       if (raw === undefined || raw === null || raw === "") continue;
 
       if (field.type === "relation") {
-        const refName = String(raw).trim();
-        const refId = await resolveRefEntity(refName, field, relationCache, ops);
+        const rawStr = String(raw).trim();
+        // Only the first value is linked when a field contains comma-separated names.
+        // Use separate relation fields (e.g., primaryExplorer, secondaryExplorer) for
+        // multiple relations to the same property.
+        const refName = rawStr.includes(",") ? rawStr.split(",")[0].trim() : rawStr;
+        if (rawStr.includes(",")) {
+          console.warn(
+            `  [warn] "${name}".${field.key}: multiple values detected — only first ("${refName}") will be linked.`
+          );
+        }
+        const refId = await resolveRefEntity(refName, field, relationCache, ops, spaceId);
         if (refId) relations[field.propertyId] = { toEntity: refId };
       } else {
-        values.push({ property: field.propertyId, type: toGeoValueType(field.type), value: raw });
+        const valueType = toGeoValueType(field.type);
+        const valueObj: any = { property: field.propertyId };
+        valueObj[valueType] = raw;
+        values.push(valueObj);
       }
     }
 
+    // Use a deterministic ID derived from the entity name so re-runs are idempotent.
+    // Per GRC-20 spec, CreateEntity is an upsert — the same ID will update in place.
+    const entityId = derivedUuidFromString(name);
     const entity = Graph.createEntity({
+      id: entityId,
       name,
       types: [schema.entityTypeId],
       values: values as any,
@@ -175,21 +204,28 @@ async function resolveRefEntity(
   name: string,
   field: ResolvedField,
   cache: Map<string, Map<string, Id>>,
-  ops: Op[]
+  ops: Op[],
+  spaceId?: string
 ): Promise<Id | null> {
   if (!cache.has(field.key)) cache.set(field.key, new Map());
   const bucket = cache.get(field.key)!;
 
   if (bucket.has(name)) return bucket.get(name)!;
 
-  const existing = await searchEntityByName(name);
+  const existing = await searchEntityByName(name, spaceId);
   if (existing) {
     bucket.set(name, existing as Id);
     console.log(`    [ref-exists] "${name}" → ${existing}`);
     return existing as Id;
   }
 
+  // Creates a stub entity (name + type only). If the referenced bounty dataset has
+  // already been uploaded, its full entity will be found above and this branch won't
+  // run. Because a deterministic ID is used (derivedUuidFromString), if the full
+  // entity is uploaded later the stub will be upserted with the complete data.
+  const entityId = derivedUuidFromString(name);
   const entity = Graph.createEntity({
+    id: entityId,
     name,
     types: field.relationEntityTypeId ? [field.relationEntityTypeId] : [],
   });

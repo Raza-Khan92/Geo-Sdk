@@ -28,9 +28,13 @@ let records: Record<string, unknown>[] | undefined;
 for (const file of files) {
   const parsed = JSON.parse(readFileSync(join(bountyDir, file), "utf-8"));
   if (Array.isArray(parsed)) {
+    if (records) console.warn(`  [warn] Multiple data files found — overwriting with ${file}`);
     records = parsed;
   } else if (parsed && typeof parsed === "object" && parsed.bountyName) {
+    if (config) console.warn(`  [warn] Multiple config files found — overwriting with ${file}`);
     config = parsed as BountyConfig;
+  } else {
+    console.warn(`  [warn] Unrecognised JSON file skipped: ${file} (not an array and has no "bountyName" key)`);
   }
 }
 
@@ -52,7 +56,7 @@ console.log("\nStep 1 — Resolving schema...");
 const schema = await resolveSchema(config);
 
 console.log("\nStep 2 — Building entity ops...");
-const { ops: entityOps, created, skipped } = await importRecords(records, schema);
+const { ops: entityOps, created, skipped } = await importRecords(records, schema, process.env.SPACE_ID);
 
 const allOps = [...schema.schemaOps, ...entityOps];
 

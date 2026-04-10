@@ -9,7 +9,14 @@ import {
 import { SpaceRegistryAbi } from "@geoprotocol/geo-sdk/abis";
 import { TESTNET } from "@geoprotocol/geo-sdk/contracts";
 import type { Op } from "@geoprotocol/geo-sdk";
-import { TESTNET_API_URL, TYPES } from "./constants.js";
+import { TESTNET_API_URL } from "./constants.js";
+
+// Minimal interface covering the sendTransaction capability shared by both
+// getSmartAccountWalletClient and getWalletClient return types.
+interface WalletSender {
+  account: { address: `0x${string}` } | null | undefined;
+  sendTransaction(args: { to: `0x${string}`; data: `0x${string}` }): Promise<`0x${string}`>;
+}
 
 export async function gql(query: string, variables?: Record<string, unknown>): Promise<any> {
   const res = await fetch(TESTNET_API_URL, {
@@ -23,20 +30,43 @@ export async function gql(query: string, variables?: Record<string, unknown>): P
   return json.data;
 }
 
-export async function searchEntityByName(name: string): Promise<string | null> {
+// Search for an entity by name, optionally scoped to a specific space.
+// Without a spaceId, the search spans all of Geo — common names like "Ethereum"
+// may match entities in other spaces and cause the record to be silently skipped.
+export async function searchEntityByName(
+  name: string,
+  spaceId?: string
+): Promise<string | null> {
   try {
-    const data = await gql(`{
-      search(query: ${JSON.stringify(name)}, first: 10) {
-        id
-        name
-      }
-    }`);
+    let data: any;
+    if (spaceId) {
+      data = await gql(
+        `query($q: String!, $spaceId: String!) {
+          search(query: $q, first: 10, filter: { spaceId: { is: $spaceId } }) {
+            id
+            name
+          }
+        }`,
+        { q: name, spaceId }
+      );
+    } else {
+      data = await gql(
+        `query($q: String!) {
+          search(query: $q, first: 10) {
+            id
+            name
+          }
+        }`,
+        { q: name }
+      );
+    }
     const hit = (data?.search ?? []).find(
       (e: { id: string; name: string }) =>
         e.name?.toLowerCase() === name.toLowerCase()
     );
     return hit?.id ?? null;
-  } catch {
+  } catch (err) {
+    console.warn(`Search failed for "${name}": ${err}`);
     return null;
   }
 }
@@ -51,22 +81,26 @@ export async function searchEntityByNameAndType(
   typeId: string
 ): Promise<string | null> {
   try {
-    const data = await gql(`{
-      entities(filter: {
-        types: { some: { typeId: { is: ${JSON.stringify(typeId)} } } }
-        name: { is: ${JSON.stringify(name)} }
-      }) {
-        id
-        name
-      }
-    }`);
+    const data = await gql(
+      `query($name: String!, $typeId: String!) {
+        entities(filter: {
+          types: { some: { typeId: { is: $typeId } } }
+          name: { is: $name }
+        }) {
+          id
+          name
+        }
+      }`,
+      { name, typeId }
+    );
     const entities: { id: string; name: string }[] = data?.entities ?? [];
     const hit = entities.find(
       (e) => e.name?.toLowerCase() === name.toLowerCase()
     );
     return hit?.id ?? null;
-  } catch {
+  } catch (err) {
     // Fall back to generic search if the API doesn't support the filter
+    console.warn(`Type-scoped search failed for "${name}" (type ${typeId}): ${err}`);
     return searchEntityByName(name);
   }
 }
@@ -90,7 +124,7 @@ export interface PublishResult {
 
 async function resolvePersonalSpaceId(
   address: string,
-  walletClient: Awaited<ReturnType<typeof getSmartAccountWalletClient>>
+  walletClient: WalletSender
 ): Promise<string> {
   const publicClient = createPublicClient({ transport: http(TESTNET_RPC_URL) });
 
@@ -109,13 +143,16 @@ async function resolvePersonalSpaceId(
     args: [address as `0x${string}`],
   })) as Hex;
 
+  // Takes the first 32 hex characters after the "0x" prefix from the bytes32 return value.
+  // This assumes the contract stores the space ID left-aligned in bytes32.
+  // If your personal space ID looks truncated, verify alignment against a known space ID.
   return spaceIdHex.slice(2, 34).toLowerCase();
 }
 
 export async function publishOps(config: PublishConfig): Promise<PublishResult> {
   const { ops, editName, privateKey, useSmartAccount = true } = config;
   try {
-    const walletClient = useSmartAccount
+    const walletClient: WalletSender = useSmartAccount
       ? await getSmartAccountWalletClient({ privateKey })
       : await getWalletClient({ privateKey });
 
@@ -123,19 +160,23 @@ export async function publishOps(config: PublishConfig): Promise<PublishResult> 
     console.log(`  Wallet: ${address}`);
 
     const spaceId =
-      config.spaceId ?? (await resolvePersonalSpaceId(address, walletClient as any));
+      config.spaceId ?? (await resolvePersonalSpaceId(address, walletClient));
     console.log(`  Space:  ${spaceId}`);
 
     const publicClient = createPublicClient({ transport: http(TESTNET_RPC_URL) });
 
-    const spaceData = await gql(`{
-      space(id: "${spaceId}") {
-        type
-        address
-        membersList { memberSpaceId }
-        editorsList { memberSpaceId }
-      }
-    }`);
+    // Use GraphQL variables instead of string interpolation to avoid injection issues.
+    const spaceData = await gql(
+      `query($id: String!) {
+        space(id: $id) {
+          type
+          address
+          membersList { memberSpaceId }
+          editorsList { memberSpaceId }
+        }
+      }`,
+      { id: spaceId }
+    );
 
     if (!spaceData.space) throw new Error(`Space ${spaceId} not found`);
 
@@ -156,9 +197,12 @@ export async function publishOps(config: PublishConfig): Promise<PublishResult> 
       });
       ({ cid, editId, to, calldata } = result);
     } else {
-      const personalSpaceData = await gql(`{
-        spaces(filter: { address: { is: "${address}" } }) { id type }
-      }`);
+      const personalSpaceData = await gql(
+        `query($addr: String!) {
+          spaces(filter: { address: { is: $addr } }) { id type }
+        }`,
+        { addr: address }
+      );
       const callerSpace = (personalSpaceData.spaces ?? []).find(
         (s: any) => s.type === "PERSONAL"
       );
@@ -190,7 +234,7 @@ export async function publishOps(config: PublishConfig): Promise<PublishResult> 
       ({ cid, editId, to, calldata } = result);
     }
 
-    const txHash = await (walletClient as any).sendTransaction({ to, data: calldata }) as `0x${string}`;
+    const txHash = await walletClient.sendTransaction({ to, data: calldata });
     await publicClient.waitForTransactionReceipt({ hash: txHash });
 
     return { success: true, spaceId, editId, cid, transactionHash: txHash };

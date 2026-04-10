@@ -26,8 +26,9 @@
     {
       "key": "networks",
       "label": "Networks",
-      "type": "text",
-      "wellKnownPropertyId": "c78b6a7c5942419daa4544f31a47cf7d"
+      "type": "relation",
+      "wellKnownPropertyId": "c78b6a7c5942419daa4544f31a47cf7d",
+      "relationEntityType": "Network"
     },
     {
       "key": "launched",
