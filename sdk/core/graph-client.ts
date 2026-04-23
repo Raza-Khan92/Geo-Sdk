@@ -119,7 +119,6 @@ export async function searchEntityByNameAndType(
     return hit?.id ?? null;
   } catch (err) {
     // Fall back to generic search if the API doesn't support the filter
-    console.warn(`Type-scoped search failed for "${name}" (type ${typeId}): ${err}`);
     return searchEntityByName(name, spaceId);
   }
 }

@@ -8,9 +8,8 @@ import { TYPES } from "./constants.js";
 // Generate a deterministic UUID from a string using MD5 hash
 function derivedUuidFromString(input: string): Id {
   const hash = createHash('md5').update(input).digest('hex');
-  // Format as UUID: 8-4-4-4-12
-  const uuid = `${hash.slice(0, 8)}-${hash.slice(8, 12)}-${hash.slice(12, 16)}-${hash.slice(16, 20)}-${hash.slice(20, 32)}`;
-  return uuid as Id;
+  // Format as 32 hex chars without dashes, matching SDK format
+  return hash.slice(0, 32) as Id;
 }
 
 export function toGeoDataType(t: FieldValueType): "TEXT" | "INT64" | "FLOAT64" | "BOOLEAN" | "DATE" | "RELATION" {
@@ -161,18 +160,23 @@ export async function importRecords(
       if (raw === undefined || raw === null || raw === "") continue;
 
       if (field.type === "relation") {
-        const rawStr = String(raw).trim();
-        // Only the first value is linked when a field contains comma-separated names.
-        // Use separate relation fields (e.g., primaryExplorer, secondaryExplorer) for
-        // multiple relations to the same property.
-        const refName = rawStr.includes(",") ? rawStr.split(",")[0].trim() : rawStr;
-        if (rawStr.includes(",")) {
+        let refNames: string[] = [];
+        if (Array.isArray(raw)) {
+          refNames = raw.map(r => String(r).trim());
+        } else {
+          const rawStr = String(raw).trim();
+          refNames = rawStr.split(",").map(s => s.trim()).filter(s => s);
+        }
+        if (refNames.length > 1) {
           console.warn(
-            `  [warn] "${name}".${field.key}: multiple values detected — only first ("${refName}") will be linked.`
+            `  [warn] "${name}".${field.key}: multiple values detected — only first ("${refNames[0]}") will be linked.`
           );
         }
-        const refId = await resolveRefEntity(refName, field, relationCache, ops, spaceId);
-        if (refId) relations[field.propertyId] = { toEntity: refId };
+        const refName = refNames[0];
+        if (refName) {
+          const refId = await resolveRefEntity(refName, field, relationCache, ops, spaceId);
+          if (refId) relations[field.propertyId] = { toEntity: refId };
+        }
       } else {
         const valueType = toGeoValueType(field.type);
         const valueObj: any = { property: field.propertyId };

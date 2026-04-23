@@ -1,9 +1,37 @@
 import "dotenv/config";
 import { readFileSync, readdirSync } from "fs";
 import { join, resolve } from "path";
+import { createPublicClient, http } from "viem";
+import { getSmartAccountWalletClient, personalSpace } from "@geoprotocol/geo-sdk";
+import { SpaceRegistryAbi } from "@geoprotocol/geo-sdk/abis";
+import { TESTNET } from "@geoprotocol/geo-sdk/contracts";
+import { TESTNET_RPC_URL } from "./core/constants.js";
 import type { BountyConfig } from "./core/types.js";
 import { resolveSchema, importRecords } from "./core/importer.js";
 import { publishOps } from "./core/graph-client.js";
+
+async function resolveSpaceId(privateKey: `0x${string}`): Promise<string> {
+  const walletClient = await getSmartAccountWalletClient({ privateKey });
+  const address = walletClient.account!.address;
+  const publicClient = createPublicClient({ transport: http(TESTNET_RPC_URL) });
+
+  const hasSpace = await personalSpace.hasSpace({ address });
+  if (!hasSpace) {
+    console.log("  Creating personal space...");
+    const { to, calldata } = personalSpace.createSpace();
+    const tx = await walletClient.sendTransaction({ to, data: calldata });
+    await publicClient.waitForTransactionReceipt({ hash: tx });
+  }
+
+  const spaceIdHex = (await publicClient.readContract({
+    address: TESTNET.SPACE_REGISTRY_ADDRESS,
+    abi: SpaceRegistryAbi,
+    functionName: "addressToSpaceId",
+    args: [address],
+  })) as `0x${string}`;
+
+  return spaceIdHex.slice(2, 34).toLowerCase();
+}
 
 const args = process.argv.slice(2);
 const dryRun = args.includes("--dry-run");
@@ -52,11 +80,27 @@ console.log(`  ${config.bountyName}`);
 console.log(`  Records : ${records.length}${dryRun ? "  [DRY RUN]" : ""}`);
 console.log("═══════════════════════════════════════════════════");
 
+let spaceId = process.env.SPACE_ID;
+if (!spaceId) {
+  if (dryRun) {
+    console.error("\n  SPACE_ID must be set for dry run (or set PRIVATE_KEY to resolve personal space)");
+    process.exit(1);
+  }
+  const privateKey = process.env.PRIVATE_KEY as `0x${string}` | undefined;
+  if (!privateKey || privateKey === "0x") {
+    console.error("\n  Set PRIVATE_KEY in .env to resolve personal space (or set SPACE_ID)");
+    process.exit(1);
+  }
+  console.log("\nResolving personal space...");
+  spaceId = await resolveSpaceId(privateKey);
+  console.log(`  Space: ${spaceId}`);
+}
+
 console.log("\nStep 1 — Resolving schema...");
-const schema = await resolveSchema(config, process.env.SPACE_ID);
+const schema = await resolveSchema(config, spaceId);
 
 console.log("\nStep 2 — Building entity ops...");
-const { ops: entityOps, created, skipped } = await importRecords(records, schema, process.env.SPACE_ID);
+const { ops: entityOps, created, skipped } = await importRecords(records, schema, spaceId);
 
 const allOps = [...schema.schemaOps, ...entityOps];
 
@@ -87,7 +131,7 @@ const result = await publishOps({
   ops: allOps,
   editName: config.editName,
   privateKey,
-  spaceId: process.env.SPACE_ID,
+  spaceId,
 });
 
 if (result.success) {
