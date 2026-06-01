@@ -1,14 +1,18 @@
 import "dotenv/config";
-import { readFileSync, readdirSync } from "fs";
-import { join, resolve } from "path";
+import { readFileSync, existsSync } from "fs";
+import { dirname, isAbsolute, join, resolve } from "path";
 import { createPublicClient, http } from "viem";
-import { getSmartAccountWalletClient, personalSpace } from "@geoprotocol/geo-sdk";
+import {
+  getSmartAccountWalletClient,
+  personalSpace,
+  TESTNET_RPC_URL,
+} from "@geoprotocol/geo-sdk";
 import { SpaceRegistryAbi } from "@geoprotocol/geo-sdk/abis";
 import { TESTNET } from "@geoprotocol/geo-sdk/contracts";
-import { TESTNET_RPC_URL } from "./core/constants.js";
 import type { BountyConfig } from "./core/types.js";
-import { resolveSchema, importRecords } from "./core/importer.js";
-import { publishOps } from "./core/graph-client.js";
+import { buildOps } from "./core/importer.js";
+import { validateBounty } from "./core/validate.js";
+import { publishOps, saveOps, printOpsSummary } from "./core/graph-client.js";
 
 async function resolveSpaceId(privateKey: `0x${string}`): Promise<string> {
   const walletClient = await getSmartAccountWalletClient({ privateKey });
@@ -35,60 +39,71 @@ async function resolveSpaceId(privateKey: `0x${string}`): Promise<string> {
 
 const args = process.argv.slice(2);
 const dryRun = args.includes("--dry-run");
-const bountyArg = args.find((a) => !a.startsWith("--"));
+const positional = args.filter((a) => !a.startsWith("--"));
+const configArg = positional[0] ?? "bounty.config.json";
+const configPath = isAbsolute(configArg) ? configArg : resolve(configArg);
 
-if (!bountyArg) {
-  console.error("Usage: npx tsx sdk/upload.ts <bounty-folder> [--dry-run]");
+if (!existsSync(configPath)) {
+  console.error(`Config file not found: ${configPath}`);
+  console.error("Usage: npm run upload [config.json] [--dry-run]");
   process.exit(1);
 }
 
-const bountyDir = resolve(bountyArg);
-const files = readdirSync(bountyDir).filter((f) => f.endsWith(".json"));
+const config: BountyConfig = JSON.parse(readFileSync(configPath, "utf-8"));
+const baseDir = dirname(configPath);
+const dataDir = join(baseDir, "data");
 
-if (files.length === 0) {
-  console.error(`No JSON files found in ${bountyDir}`);
-  process.exit(1);
+console.log("═══════════════════════════════════════════════════");
+console.log(`  ${config.bountyName}${dryRun ? "  [DRY RUN]" : ""}`);
+console.log(`  Config: ${configPath}`);
+console.log(`  Data:   ${dataDir}`);
+console.log("═══════════════════════════════════════════════════");
+
+const dataBySource: Record<string, any[]> = {};
+for (const [sourceName, source] of Object.entries(config.sources)) {
+  const filePath = join(dataDir, source.file);
+  if (!existsSync(filePath)) {
+    console.error(`\n  Data file not found: ${filePath} (source "${sourceName}")`);
+    process.exit(1);
+  }
+  const parsed = JSON.parse(readFileSync(filePath, "utf-8"));
+  if (!Array.isArray(parsed)) {
+    console.error(`\n  Data file must be a JSON array: ${filePath}`);
+    process.exit(1);
+  }
+  dataBySource[sourceName] = parsed;
 }
 
-let config: BountyConfig | undefined;
-let records: Record<string, unknown>[] | undefined;
+console.log("\nStep 0 — Validating records...");
+const validation = validateBounty(config, dataBySource);
 
-for (const file of files) {
-  const parsed = JSON.parse(readFileSync(join(bountyDir, file), "utf-8"));
-  if (Array.isArray(parsed)) {
-    if (records) console.warn(`  [warn] Multiple data files found — overwriting with ${file}`);
-    records = parsed;
-  } else if (parsed && typeof parsed === "object" && parsed.bountyName) {
-    if (config) console.warn(`  [warn] Multiple config files found — overwriting with ${file}`);
-    config = parsed as BountyConfig;
-  } else {
-    console.warn(`  [warn] Unrecognised JSON file skipped: ${file} (not an array and has no "bountyName" key)`);
+if (validation.warnings.length > 0) {
+  console.log(`\n  Warnings (${validation.warnings.length}):`);
+  for (const w of validation.warnings) {
+    console.log(`    ! [${w.source}] ${w.name} → ${w.field}: ${w.message}`);
   }
 }
 
-if (!config) {
-  console.error(`No config file found in ${bountyDir} (needs an object with "bountyName")`);
-  process.exit(1);
-}
-if (!records) {
-  console.error(`No data file found in ${bountyDir} (needs a JSON array)`);
+if (!validation.valid) {
+  console.error(`\n  Validation failed (${validation.errors.length} errors):`);
+  for (const e of validation.errors) {
+    console.error(`    × [${e.source}] ${e.name} → ${e.field}: ${e.message}`);
+  }
   process.exit(1);
 }
 
-console.log("═══════════════════════════════════════════════════");
-console.log(`  ${config.bountyName}`);
-console.log(`  Records : ${records.length}${dryRun ? "  [DRY RUN]" : ""}`);
-console.log("═══════════════════════════════════════════════════");
+const totalRecords = Object.values(dataBySource).reduce((s, arr) => s + arr.length, 0);
+console.log(`  ${totalRecords} records OK across ${Object.keys(dataBySource).length} sources.`);
 
 let spaceId = process.env.SPACE_ID;
 if (!spaceId) {
   if (dryRun) {
-    console.error("\n  SPACE_ID must be set for dry run (or set PRIVATE_KEY to resolve personal space)");
+    console.error("\n  SPACE_ID must be set in .env for dry-run schema resolution.");
     process.exit(1);
   }
   const privateKey = process.env.PRIVATE_KEY as `0x${string}` | undefined;
   if (!privateKey || privateKey === "0x") {
-    console.error("\n  Set PRIVATE_KEY in .env to resolve personal space (or set SPACE_ID)");
+    console.error("\n  Set PRIVATE_KEY in .env");
     process.exit(1);
   }
   console.log("\nResolving personal space...");
@@ -96,50 +111,66 @@ if (!spaceId) {
   console.log(`  Space: ${spaceId}`);
 }
 
-console.log("\nStep 1 — Resolving schema...");
-const schema = await resolveSchema(config, spaceId);
+console.log("\nStep 1 — Building ops...");
+let buildResult;
+try {
+  buildResult = await buildOps(config, dataDir, spaceId);
+} catch (err) {
+  console.error(`\n  Build failed: ${err instanceof Error ? err.message : err}`);
+  process.exit(1);
+}
 
-console.log("\nStep 2 — Building entity ops...");
-const { ops: entityOps, created, skipped } = await importRecords(records, schema, spaceId);
-
-const allOps = [...schema.schemaOps, ...entityOps];
+const { ops, stats } = buildResult;
 
 console.log("\n───────────────────────────────────────────────────");
-console.log(`  Total ops : ${allOps.length}`);
-console.log(`  Created   : ${created}`);
-console.log(`  Skipped   : ${skipped} (already in Geo)`);
+console.log("  Build summary");
+console.log("───────────────────────────────────────────────────");
+console.log(`  Properties created: ${stats.properties}`);
+console.log(`  Types created     : ${stats.types}`);
+console.log(`  Enums created     : ${stats.enums}`);
+console.log(`  Entities created  : ${stats.entities}`);
+console.log(`  Entities enriched : ${stats.enriched}`);
+console.log(`  Relations created : ${stats.relations}`);
+console.log(`  Text blocks       : ${stats.blocks}`);
+console.log(`  Data blocks       : ${stats.dataBlocks}`);
+console.log(`  Images uploaded   : ${stats.images}`);
+console.log(`  Reused entities   : ${stats.reused}`);
+printOpsSummary(ops);
 console.log("───────────────────────────────────────────────────");
 
-if (allOps.length === 0) {
+if (ops.length === 0) {
   console.log("\n  Nothing new to publish.");
   process.exit(0);
 }
 
+saveOps(ops, join(baseDir, "data_to_delete"), `publish_ops_${Date.now()}.json`);
+
 if (dryRun) {
-  console.log("\n  Dry run — not publishing. Remove --dry-run to publish.");
+  console.log("\n  Dry run complete. Remove --dry-run to publish.");
   process.exit(0);
 }
 
 const privateKey = process.env.PRIVATE_KEY as `0x${string}` | undefined;
 if (!privateKey || privateKey === "0x") {
-  console.error("\n  Set PRIVATE_KEY in .env (from https://www.geobrowser.io/export-wallet)");
+  console.error("\n  Set PRIVATE_KEY in .env");
   process.exit(1);
 }
 
-console.log("\nStep 3 — Publishing...");
+console.log("\nStep 2 — Publishing...");
 const result = await publishOps({
-  ops: allOps,
+  ops,
   editName: config.editName,
   privateKey,
   spaceId,
 });
 
 if (result.success) {
-  console.log("\n  Published!");
+  console.log("\n  Published.");
   console.log(`  Space : ${result.spaceId}`);
   console.log(`  Edit  : ${result.editId}`);
   console.log(`  CID   : ${result.cid}`);
   console.log(`  Tx    : ${result.transactionHash}`);
+  console.log(`\n  Verify: https://www.geobrowser.io/space/${result.spaceId}`);
 } else {
   console.error(`\n  Failed: ${result.error}`);
   process.exit(1);

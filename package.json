@@ -4,8 +4,10 @@
   "description": "Generic SDK to upload any bounty dataset to the Geo Browser knowledge graph",
   "type": "module",
   "scripts": {
-    "upload": "npx tsx sdk/upload.ts",
-    "typecheck": "npx tsc --noEmit",
+    "upload": "tsx --env-file=.env sdk/upload.ts",
+    "delete": "tsx --env-file=.env sdk/delete.ts",
+    "query": "tsx --env-file=.env query.ts",
+    "typecheck": "tsc --noEmit",
     "test": "vitest run"
   },
   "dependencies": {

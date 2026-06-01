@@ -1,0 +1,934 @@
+[
+  {
+    "name": "Ondo US Government Bond Fund",
+    "description": "Tokenised exposure to a portfolio of short-duration US Treasuries managed by Ondo Finance. Restricted to qualified purchasers and accredited investors.",
+    "symbol": "OUSG",
+    "contractAddress": "0x1B19C19393e2d034D8Ff31ff34c81252FcBbee92",
+    "marketCapUsd": 630000000.0,
+    "minInvestment": "$5,000",
+    "complianceObligations": "Restricted to qualified purchasers and accredited investors; KYC and anti-money laundering checks required.",
+    "yearFounded": 2023,
+    "website": "https://ondo.finance/ousg",
+    "xProfile": "https://x.com/OndoFinance",
+    "coinGeckoUrl": "https://www.coingecko.com/en/coins/ondo-us-government-bond",
+    "backedBy": [
+      "US Treasury bills"
+    ],
+    "chain": [
+      "Ethereum",
+      "Polygon",
+      "Solana"
+    ]
+  },
+  {
+    "name": "Ondo US Dollar Yield",
+    "description": "Yield-bearing note backed by short-term US Treasuries and bank demand deposits. Available to non-US investors with KYC.",
+    "symbol": "USDY",
+    "contractAddress": "0x96F6eF951840721AdBF46Ac996b59E0235CB985C",
+    "marketCapUsd": 400000000.0,
+    "minInvestment": "$500",
+    "complianceObligations": "Available to non-US investors only; KYC and anti-money laundering checks required.",
+    "yearFounded": 2023,
+    "website": "https://ondo.finance/usdy",
+    "xProfile": "https://x.com/OndoFinance",
+    "coinGeckoUrl": "https://www.coingecko.com/en/coins/ondo-us-dollar-yield",
+    "backedBy": [
+      "US Treasury bills"
+    ],
+    "chain": [
+      "Ethereum",
+      "Arbitrum",
+      "Mantle",
+      "Solana"
+    ]
+  },
+  {
+    "name": "BlackRock USD Institutional Digital Liquidity Fund",
+    "description": "Onchain share of an SEC-registered USD money-market fund managed by BlackRock and tokenised via Securitize. Restricted to qualified purchasers.",
+    "symbol": "BUIDL",
+    "contractAddress": "0x7712c34205737192402172409a8F7ccef8aA2AEc",
+    "marketCapUsd": 2580000000.0,
+    "minInvestment": "$5,000,000",
+    "complianceObligations": "Restricted to qualified purchasers; KYC and anti-money laundering checks handled by Securitize.",
+    "yearFounded": 2024,
+    "website": "https://www.blackrock.com",
+    "xProfile": "https://x.com/BlackRock",
+    "coinGeckoUrl": "https://www.coingecko.com/en/coins/blackrock-usd-institutional-digital-liquidity-fund",
+    "backedBy": [
+      "US government money-market instruments"
+    ],
+    "issuedBy": "BlackRock",
+    "chain": [
+      "Ethereum",
+      "Arbitrum",
+      "Avalanche",
+      "Optimism",
+      "Polygon",
+      "Aptos",
+      "Solana"
+    ]
+  },
+  {
+    "name": "Franklin OnChain US Government Money Fund",
+    "description": "SEC-registered tokenised US government money-market fund. On-chain shareholder records on Stellar and Polygon are the system of record.",
+    "symbol": "BENJI / FOBXX",
+    "marketCapUsd": 430000000.0,
+    "minInvestment": "$20",
+    "complianceObligations": "KYC and anti-money laundering checks required.",
+    "yearFounded": 2021,
+    "website": "https://www.franklintempleton.com",
+    "xProfile": "https://x.com/FTI_US",
+    "coinGeckoUrl": "https://www.coingecko.com/en/coins/franklin-onchain-us-government-money-fund",
+    "backedBy": [
+      "US government money-market instruments"
+    ],
+    "issuedBy": "Franklin Templeton",
+    "chain": [
+      "Stellar",
+      "Polygon",
+      "Ethereum",
+      "Arbitrum",
+      "Avalanche",
+      "Base",
+      "Aptos",
+      "Solana"
+    ]
+  },
+  {
+    "name": "Superstate short-duration US Government Securities Fund",
+    "description": "SEC-registered tokenised ultra-short-duration US government securities fund. Restricted to US accredited investors and qualified institutional buyers.",
+    "symbol": "USTB",
+    "contractAddress": "0x43415eB6ff9DB7E26A15b704e7A3eDCe97d31C4e",
+    "marketCapUsd": 600000000.0,
+    "minInvestment": "$1,000",
+    "complianceObligations": "Restricted to US accredited investors and qualified institutional buyers; KYC and anti-money laundering checks required.",
+    "yearFounded": 2023,
+    "website": "https://superstate.com",
+    "xProfile": "https://x.com/superstateinc",
+    "coinGeckoUrl": "https://www.coingecko.com/en/coins/superstate-short-duration-us-government-securities-fund-ustb",
+    "backedBy": [
+      "US Treasury bills"
+    ],
+    "chain": [
+      "Ethereum"
+    ]
+  },
+  {
+    "name": "Superstate US Credit Obligations Fund",
+    "description": "Tokenised investment-grade short-duration US corporate credit fund managed by Superstate.",
+    "symbol": "USCC",
+    "marketCapUsd": 50000000.0,
+    "minInvestment": "$1,000",
+    "complianceObligations": "KYC and anti-money laundering checks required.",
+    "yearFounded": 2024,
+    "website": "https://superstate.com",
+    "xProfile": "https://x.com/superstateinc",
+    "backedBy": [
+      "US corporate credit obligations"
+    ],
+    "chain": [
+      "Ethereum"
+    ]
+  },
+  {
+    "name": "OpenEden T-Bill vault",
+    "description": "Tokenised vault providing on-chain exposure to short-term US Treasury bills. Issued by OpenEden under a Singapore MAS-regulated structure.",
+    "symbol": "TBILL",
+    "marketCapUsd": 150000000.0,
+    "minInvestment": "$100,000",
+    "complianceObligations": "KYC and anti-money laundering checks required.",
+    "yearFounded": 2023,
+    "website": "https://openeden.com",
+    "xProfile": "https://x.com/OpenEdenLabs",
+    "backedBy": [
+      "US Treasury bills"
+    ],
+    "chain": [
+      "Ethereum"
+    ]
+  },
+  {
+    "name": "Matrixdock short-term Treasury bill",
+    "description": "ERC-1400 security token representing exposure to short-term US Treasury bills. Issued by Matrixdock for non-US accredited investors.",
+    "symbol": "STBT",
+    "marketCapUsd": 200000000.0,
+    "minInvestment": "$100,000",
+    "complianceObligations": "KYC and anti-money laundering checks required.",
+    "yearFounded": 2023,
+    "website": "https://www.matrixdock.com",
+    "xProfile": "https://x.com/matrixdock",
+    "backedBy": [
+      "US Treasury bills"
+    ],
+    "chain": [
+      "Ethereum"
+    ]
+  },
+  {
+    "name": "Circle USYC",
+    "description": "Yield-bearing token backed by short-duration US Treasuries and reverse repos. Originally issued by Hashnote; acquired by Circle in January 2025.",
+    "symbol": "USYC",
+    "marketCapUsd": 2900000000.0,
+    "minInvestment": "$100,000",
+    "complianceObligations": "Restricted to institutional and accredited investors; KYC and anti-money laundering checks required.",
+    "yearFounded": 2023,
+    "website": "https://www.circle.com/usyc",
+    "xProfile": "https://x.com/circle",
+    "coinGeckoUrl": "https://www.coingecko.com/en/coins/hashnote-usyc",
+    "backedBy": [
+      "US Treasury bills"
+    ],
+    "chain": [
+      "Ethereum",
+      "Canton Network"
+    ]
+  },
+  {
+    "name": "Mountain Protocol USD",
+    "description": "Bermuda-regulated yield-bearing stablecoin backed by short-term US Treasuries. Distributes daily yield via rebasing.",
+    "symbol": "USDM",
+    "marketCapUsd": 400000000.0,
+    "minInvestment": "$100",
+    "complianceObligations": "Available to non-US investors only; KYC and anti-money laundering checks required.",
+    "yearFounded": 2023,
+    "website": "https://mountainprotocol.com",
+    "xProfile": "https://x.com/MountainUSDM",
+    "backedBy": [
+      "US Treasury bills"
+    ],
+    "chain": [
+      "Ethereum"
+    ]
+  },
+  {
+    "name": "Ethena USDtb",
+    "description": "Stablecoin issued by Ethena backed primarily by BlackRock's BUIDL fund. Designed as a non-yield-bearing reserve asset distinct from Ethena's USDe.",
+    "symbol": "USDtb",
+    "marketCapUsd": 1400000000.0,
+    "minInvestment": "$1",
+    "complianceObligations": "This token is permissionless; no KYC or anti-money laundering checks are required.",
+    "yearFounded": 2024,
+    "website": "https://ethena.fi",
+    "xProfile": "https://x.com/ethena_labs",
+    "backedBy": [
+      "US government money-market instruments"
+    ],
+    "chain": [
+      "Ethereum"
+    ]
+  },
+  {
+    "name": "Anemoy Janus Henderson Treasury Fund",
+    "description": "BVI-regulated tokenised US Treasury bill fund managed by Janus Henderson and tokenised by Anemoy on Centrifuge.",
+    "symbol": "JTRSY",
+    "marketCapUsd": 1500000000.0,
+    "minInvestment": "$100",
+    "complianceObligations": "Available to non-US investors only; KYC and anti-money laundering checks required.",
+    "yearFounded": 2023,
+    "website": "https://www.anemoy.io",
+    "xProfile": "https://x.com/anemoyltd",
+    "backedBy": [
+      "US Treasury bills"
+    ],
+    "issuedBy": "Janus Henderson",
+    "chain": [
+      "Ethereum",
+      "Base",
+      "Arbitrum",
+      "Avalanche",
+      "Stellar",
+      "Centrifuge",
+      "Solana"
+    ]
+  },
+  {
+    "name": "WisdomTree Government Money Market Digital Fund",
+    "description": "SEC-registered tokenised US government money-market fund. Investor records are kept on-chain via WisdomTree Prime.",
+    "symbol": "WTGXX",
+    "marketCapUsd": 857000000.0,
+    "minInvestment": "$1",
+    "complianceObligations": "KYC and anti-money laundering checks required.",
+    "yearFounded": 2023,
+    "website": "https://www.wisdomtreeprime.com",
+    "xProfile": "https://x.com/WisdomTreePrime",
+    "backedBy": [
+      "US government money-market instruments"
+    ],
+    "issuedBy": "WisdomTree",
+    "chain": [
+      "Ethereum",
+      "Stellar",
+      "Avalanche",
+      "Arbitrum",
+      "Base",
+      "BNB Chain",
+      "Polygon"
+    ]
+  },
+  {
+    "name": "PAX Gold",
+    "description": "ERC-20 token backed 1:1 by one fine troy ounce of LBMA Good Delivery gold held in Brink's vaults under the Paxos Trust Company.",
+    "symbol": "PAXG",
+    "contractAddress": "0x45804880De22913dAFE09f4980848ECE6EcbAf78",
+    "marketCapUsd": 480000000.0,
+    "minInvestment": "$1",
+    "complianceObligations": "KYC and anti-money laundering checks required for large redemptions.",
+    "yearFounded": 2019,
+    "website": "https://paxos.com/paxgold",
+    "xProfile": "https://x.com/Paxos",
+    "coinGeckoUrl": "https://www.coingecko.com/en/coins/pax-gold",
+    "backedBy": [
+      "LBMA Good Delivery gold"
+    ],
+    "issuedBy": "Paxos",
+    "chain": [
+      "Ethereum"
+    ]
+  },
+  {
+    "name": "Tether Gold",
+    "description": "Token backed by physical gold held in Swiss vaults. Each XAUT represents one fine troy ounce of allocated gold.",
+    "symbol": "XAUT",
+    "contractAddress": "0x68749665FF8D2d112Fa859AA293F07A622782F38",
+    "marketCapUsd": 550000000.0,
+    "minInvestment": "$1",
+    "complianceObligations": "This token is permissionless; no KYC or anti-money laundering checks are required.",
+    "yearFounded": 2020,
+    "website": "https://gold.tether.to",
+    "xProfile": "https://x.com/Tether_to",
+    "coinGeckoUrl": "https://www.coingecko.com/en/coins/tether-gold",
+    "backedBy": [
+      "Allocated gold in Swiss vaults"
+    ],
+    "issuedBy": "Tether",
+    "chain": [
+      "Ethereum"
+    ]
+  },
+  {
+    "name": "CACHE gold",
+    "description": "ERC-20 token where each unit represents one gram of allocated physical gold stored in LBMA-approved Singapore vaults.",
+    "symbol": "CGT",
+    "marketCapUsd": 5000000.0,
+    "minInvestment": "$1",
+    "complianceObligations": "This token is permissionless; no KYC or anti-money laundering checks are required.",
+    "yearFounded": 2019,
+    "website": "https://cache.gold",
+    "xProfile": "https://x.com/cache_gold",
+    "backedBy": [
+      "LBMA Singapore allocated gold"
+    ],
+    "chain": [
+      "Ethereum"
+    ]
+  },
+  {
+    "name": "WisdomTree physical gold",
+    "description": "Token backed by physical gold held in JPMorgan custody under WisdomTree's regulated ETP structure.",
+    "symbol": "WTGOLD",
+    "marketCapUsd": 30000000.0,
+    "minInvestment": "$1",
+    "complianceObligations": "KYC and anti-money laundering checks required.",
+    "yearFounded": 2022,
+    "website": "https://www.wisdomtreeprime.com",
+    "xProfile": "https://x.com/WisdomTreePrime",
+    "backedBy": [
+      "Institutionally custodied gold"
+    ],
+    "issuedBy": "WisdomTree",
+    "chain": [
+      "Ethereum",
+      "Stellar"
+    ]
+  },
+  {
+    "name": "WisdomTree physical silver",
+    "description": "Token backed by physical silver held in institutional custody under WisdomTree's regulated ETP structure.",
+    "symbol": "WTSILV",
+    "marketCapUsd": 5000000.0,
+    "minInvestment": "$1",
+    "complianceObligations": "KYC and anti-money laundering checks required.",
+    "yearFounded": 2022,
+    "website": "https://www.wisdomtreeprime.com",
+    "xProfile": "https://x.com/WisdomTreePrime",
+    "backedBy": [
+      "Institutionally custodied silver"
+    ],
+    "issuedBy": "WisdomTree",
+    "chain": [
+      "Ethereum",
+      "Stellar"
+    ]
+  },
+  {
+    "name": "Base Carbon Tonne",
+    "description": "ERC-20 representing one tonne of CO2-equivalent Verra Verified Carbon Standard credits bridged on-chain by Toucan Protocol.",
+    "symbol": "BCT",
+    "contractAddress": "0x2F800Db0fdb5223b3C3f354886d907A671414A7F",
+    "marketCapUsd": 20000000.0,
+    "minInvestment": "$1",
+    "complianceObligations": "This token is permissionless; no KYC or anti-money laundering checks are required.",
+    "yearFounded": 2021,
+    "website": "https://toucan.earth",
+    "xProfile": "https://x.com/ToucanProtocol",
+    "coinGeckoUrl": "https://www.coingecko.com/en/coins/toucan-protocol-base-carbon-tonne",
+    "backedBy": [
+      "Verra VCS REDD+ carbon credits"
+    ],
+    "chain": [
+      "Polygon"
+    ]
+  },
+  {
+    "name": "Nature Carbon Tonne",
+    "description": "ERC-20 backed by post-2012 nature-based Verra VCS carbon credits with stricter eligibility filters than BCT.",
+    "symbol": "NCT",
+    "contractAddress": "0xD838290e877E0188a4A44700463419ED96c16107",
+    "marketCapUsd": 10000000.0,
+    "minInvestment": "$1",
+    "complianceObligations": "This token is permissionless; no KYC or anti-money laundering checks are required.",
+    "yearFounded": 2022,
+    "website": "https://toucan.earth",
+    "xProfile": "https://x.com/ToucanProtocol",
+    "coinGeckoUrl": "https://www.coingecko.com/en/coins/toucan-protocol-nature-carbon-tonne",
+    "backedBy": [
+      "Post-2012 Verra VCS nature carbon credits"
+    ],
+    "chain": [
+      "Polygon"
+    ]
+  },
+  {
+    "name": "Moss carbon credit",
+    "description": "ERC-20 representing certified Amazonian REDD+ carbon credits. Each token represents one tonne of CO2-equivalent.",
+    "symbol": "MCO2",
+    "contractAddress": "0xfC98e825A2264D890F9a1e68ed50E1526abCcacD",
+    "marketCapUsd": 5000000.0,
+    "minInvestment": "$1",
+    "complianceObligations": "This token is permissionless; no KYC or anti-money laundering checks are required.",
+    "yearFounded": 2020,
+    "website": "https://moss.earth",
+    "xProfile": "https://x.com/mossearthco",
+    "coinGeckoUrl": "https://www.coingecko.com/en/coins/moss-carbon-credit",
+    "backedBy": [
+      "Amazonian REDD+ carbon credits"
+    ],
+    "chain": [
+      "Ethereum",
+      "Polygon"
+    ]
+  },
+  {
+    "name": "RealT property token",
+    "description": "Per-property ERC-20 representing fractional ownership in a US single-family or multi-unit rental held by a RealT LLC special-purpose vehicle.",
+    "symbol": "REALTOKEN",
+    "marketCapUsd": 80000000.0,
+    "minInvestment": "$50",
+    "complianceObligations": "KYC and anti-money laundering checks required.",
+    "yearFounded": 2019,
+    "website": "https://realt.co",
+    "xProfile": "https://x.com/RealTPlatform",
+    "backedBy": [
+      "US residential rental properties"
+    ],
+    "chain": [
+      "Ethereum",
+      "Gnosis"
+    ]
+  },
+  {
+    "name": "Landshare real estate token",
+    "description": "BEP-20 token backed by a portfolio of US residential properties held in Landshare LLC SPVs.",
+    "symbol": "LSRWA",
+    "marketCapUsd": 10000000.0,
+    "minInvestment": "$1",
+    "complianceObligations": "This token is permissionless; no KYC or anti-money laundering checks are required.",
+    "yearFounded": 2021,
+    "website": "https://landshare.io",
+    "xProfile": "https://x.com/LandshareIO",
+    "backedBy": [
+      "US residential rental properties"
+    ],
+    "chain": [
+      "BNB Chain"
+    ]
+  },
+  {
+    "name": "Real USD",
+    "description": "Historical stablecoin issued by Tangible on Polygon, partially backed by tokenised UK and European real estate. Depegged in October 2023 and entered wind-down; included for historical record.",
+    "symbol": "USDR",
+    "marketCapUsd": 1000000000000.0,
+    "minInvestment": "$1",
+    "complianceObligations": "This token is permissionless; no KYC or anti-money laundering checks are required.",
+    "yearFounded": 2022,
+    "website": "https://www.tangible.store",
+    "xProfile": "https://x.com/tangibleDAO",
+    "backedBy": [
+      "UK and European real estate"
+    ],
+    "chain": [
+      "Polygon"
+    ]
+  },
+  {
+    "name": "Lofty property token",
+    "description": "Algorand ASA per property representing fractional ownership of US residential rentals held in Lofty LLC SPVs.",
+    "symbol": "LOFTY",
+    "marketCapUsd": 30000000.0,
+    "minInvestment": "$50",
+    "complianceObligations": "This token is permissionless; no KYC or anti-money laundering checks are required.",
+    "yearFounded": 2021,
+    "website": "https://www.lofty.ai",
+    "xProfile": "https://x.com/LoftyAI",
+    "backedBy": [
+      "US residential rental properties"
+    ],
+    "chain": [
+      "Algorand"
+    ]
+  },
+  {
+    "name": "Figure HELOC",
+    "description": "Tokenised pool of home equity lines of credit originated by Figure Technologies and settled on Provenance Blockchain.",
+    "symbol": "FIGR_HELOC",
+    "minInvestment": "$1,000",
+    "complianceObligations": "KYC and anti-money laundering checks required.",
+    "yearFounded": 2019,
+    "website": "https://www.figure.com",
+    "xProfile": "https://x.com/figure",
+    "backedBy": [
+      "US home equity lines of credit"
+    ],
+    "chain": [
+      "Provenance Blockchain"
+    ]
+  },
+  {
+    "name": "Goldfinch Senior Pool",
+    "description": "ERC-20 representing a proportional share of the Goldfinch Senior Pool, which finances diversified emerging-market FinTech credit.",
+    "symbol": "FIDU",
+    "marketCapUsd": 90000000.0,
+    "minInvestment": "$1",
+    "complianceObligations": "KYC and anti-money laundering checks required for non-US liquidity mining participants.",
+    "yearFounded": 2021,
+    "website": "https://goldfinch.finance",
+    "xProfile": "https://x.com/goldfinch_fi",
+    "backedBy": [
+      "Senior secured global credit pools"
+    ],
+    "chain": [
+      "Ethereum"
+    ]
+  },
+  {
+    "name": "Centrifuge senior tranche",
+    "description": "ERC-20 senior tranche token (with permissioning hooks) for Centrifuge real-world credit pools. Holds first claim on pool repayments after fees.",
+    "symbol": "DROP",
+    "marketCapUsd": 200000000.0,
+    "minInvestment": "$1",
+    "complianceObligations": "KYC and anti-money laundering checks required; specific obligations vary by pool.",
+    "yearFounded": 2020,
+    "website": "https://centrifuge.io",
+    "xProfile": "https://x.com/centrifuge",
+    "backedBy": [
+      "Centrifuge real-world credit pool assets"
+    ],
+    "chain": [
+      "Ethereum",
+      "Centrifuge"
+    ]
+  },
+  {
+    "name": "Apollo Diversified Credit Securitize Fund",
+    "description": "Tokenised feeder share of Apollo's Diversified Credit Fund, available to accredited investors via Securitize.",
+    "symbol": "ACRED",
+    "marketCapUsd": 500000000.0,
+    "minInvestment": "$10,000",
+    "complianceObligations": "Restricted to accredited investors; KYC and anti-money laundering checks required.",
+    "yearFounded": 2025,
+    "website": "https://www.apollo.com",
+    "xProfile": "https://x.com/ApolloGlobal",
+    "backedBy": [
+      "Apollo diversified credit portfolio"
+    ],
+    "issuedBy": "Apollo Global Management",
+    "chain": [
+      "Ethereum",
+      "Avalanche"
+    ]
+  },
+  {
+    "name": "Hamilton Lane Senior Credit Opportunities Fund",
+    "description": "Tokenised feeder share of Hamilton Lane's senior secured credit fund, distributed via Securitize.",
+    "symbol": "SCOPE",
+    "marketCapUsd": 100000000.0,
+    "minInvestment": "$10,000",
+    "complianceObligations": "Restricted to accredited investors; KYC and anti-money laundering checks required.",
+    "yearFounded": 2022,
+    "website": "https://www.hamiltonlane.com",
+    "xProfile": "https://x.com/hamiltonlane",
+    "backedBy": [
+      "Hamilton Lane senior credit portfolio"
+    ],
+    "issuedBy": "Hamilton Lane",
+    "chain": [
+      "Polygon",
+      "Ethereum"
+    ]
+  },
+  {
+    "name": "Maple Syrup USDC",
+    "description": "Yield-bearing vault token representing a share of Maple Finance's USDC pool, generating yield from institutional unsecured lending.",
+    "symbol": "syrupUSDC",
+    "marketCapUsd": 1200000000.0,
+    "minInvestment": "$1",
+    "complianceObligations": "Compliance obligations vary by pool; some pools require KYC and anti-money laundering verification.",
+    "yearFounded": 2023,
+    "website": "https://maple.finance",
+    "xProfile": "https://x.com/maplefinance",
+    "backedBy": [
+      "US corporate credit obligations"
+    ],
+    "chain": [
+      "Ethereum",
+      "Arbitrum",
+      "Base",
+      "Solana"
+    ]
+  },
+  {
+    "name": "Maple Syrup USDT",
+    "description": "USDT-denominated equivalent of Maple's syrupUSDC vault, providing institutional unsecured lending yield in USDT.",
+    "symbol": "syrupUSDT",
+    "marketCapUsd": 622000000.0,
+    "minInvestment": "$1",
+    "complianceObligations": "Compliance obligations vary by pool; some pools require KYC and anti-money laundering verification.",
+    "yearFounded": 2024,
+    "website": "https://maple.finance",
+    "xProfile": "https://x.com/maplefinance",
+    "backedBy": [
+      "US corporate credit obligations"
+    ],
+    "chain": [
+      "Ethereum",
+      "Solana"
+    ]
+  },
+  {
+    "name": "Clearpool single-borrower pool",
+    "description": "ERC-20 pool token issued per Clearpool single-borrower lending pool. Each pool represents an institutional borrower's drawn credit facility.",
+    "symbol": "cpToken",
+    "marketCapUsd": 150000000.0,
+    "minInvestment": "$1",
+    "complianceObligations": "This token is permissionless; no KYC or anti-money laundering checks are required.",
+    "yearFounded": 2022,
+    "website": "https://clearpool.finance",
+    "xProfile": "https://x.com/ClearpoolFin",
+    "backedBy": [
+      "US corporate credit obligations"
+    ],
+    "chain": [
+      "Ethereum",
+      "Polygon",
+      "Arbitrum"
+    ]
+  },
+  {
+    "name": "TrueFi structured credit",
+    "description": "ERC-20 structured credit note issued via TrueFi's credit marketplace for institutional unsecured borrowers.",
+    "symbol": "tfNote",
+    "marketCapUsd": 50000000.0,
+    "minInvestment": "$1",
+    "complianceObligations": "Open permissionlessly to lenders; institutional borrowers are KYC and anti-money laundering verified.",
+    "yearFounded": 2020,
+    "website": "https://truefi.io",
+    "xProfile": "https://x.com/TrueFiDAO",
+    "backedBy": [
+      "US corporate credit obligations"
+    ],
+    "chain": [
+      "Ethereum"
+    ]
+  },
+  {
+    "name": "Anemoy Janus Henderson AAA CLO Fund",
+    "description": "Tokenised fund providing on-chain investors exposure to AAA-rated CLO tranches. Issued by Anemoy in partnership with Janus Henderson.",
+    "symbol": "JAAA",
+    "marketCapUsd": 408000000.0,
+    "minInvestment": "$10,000",
+    "complianceObligations": "KYC and anti-money laundering checks required.",
+    "yearFounded": 2024,
+    "website": "https://www.anemoy.io",
+    "xProfile": "https://x.com/anemoyltd",
+    "backedBy": [
+      "AAA-rated CLO tranches"
+    ],
+    "issuedBy": "Janus Henderson",
+    "chain": [
+      "Ethereum",
+      "Base",
+      "Arbitrum",
+      "Centrifuge"
+    ]
+  },
+  {
+    "name": "KKR Health Care Strategic Growth II Securitize Fund",
+    "description": "Tokenised LP interest in KKR's Health Care Strategic Growth Fund II, distributed to qualified investors via Securitize on Avalanche.",
+    "symbol": "SKHC",
+    "marketCapUsd": 50000000.0,
+    "minInvestment": "$100,000",
+    "complianceObligations": "Restricted to qualified purchasers; KYC and anti-money laundering checks required.",
+    "yearFounded": 2022,
+    "website": "https://www.kkr.com",
+    "xProfile": "https://x.com/KKR_Co",
+    "backedBy": [
+      "KKR Health Care Strategic Growth Fund II LP interest"
+    ],
+    "issuedBy": "KKR",
+    "chain": [
+      "Avalanche"
+    ]
+  },
+  {
+    "name": "Credix trade finance pool",
+    "description": "Solana-native LP token for Credix credit pools backed by trade finance receivables and SME loans in Brazil and Southeast Asia.",
+    "symbol": "credixLP",
+    "marketCapUsd": 50000000.0,
+    "minInvestment": "$1",
+    "complianceObligations": "Restricted to institutional investors; KYC and anti-money laundering checks required.",
+    "yearFounded": 2021,
+    "website": "https://credix.finance",
+    "xProfile": "https://x.com/CredixFinance",
+    "backedBy": [
+      "Emerging-market trade finance receivables"
+    ],
+    "chain": [
+      "Solana"
+    ]
+  },
+  {
+    "name": "Backed bCSPX",
+    "description": "ERC-20 backed 1:1 by shares of the iShares Core S&P 500 UCITS ETF held by a Swiss DLT Act-regulated broker.",
+    "symbol": "bCSPX",
+    "marketCapUsd": 40000000.0,
+    "minInvestment": "$1",
+    "complianceObligations": "KYC and anti-money laundering checks required.",
+    "yearFounded": 2022,
+    "website": "https://backed.fi",
+    "xProfile": "https://x.com/BackedFi",
+    "backedBy": [
+      "iShares Core S&P 500 UCITS ETF"
+    ],
+    "chain": [
+      "Ethereum"
+    ]
+  },
+  {
+    "name": "Backed bIBTA",
+    "description": "ERC-20 backed 1:1 by iShares USD Treasury Bond 1\u20133yr UCITS ETF shares held by a Swiss DLT Act-regulated broker.",
+    "symbol": "bIBTA",
+    "marketCapUsd": 30000000.0,
+    "minInvestment": "$1",
+    "complianceObligations": "KYC and anti-money laundering checks required.",
+    "yearFounded": 2022,
+    "website": "https://backed.fi",
+    "xProfile": "https://x.com/BackedFi",
+    "backedBy": [
+      "iShares USD Treasury Bond 1\u20133yr UCITS ETF"
+    ],
+    "chain": [
+      "Ethereum"
+    ]
+  },
+  {
+    "name": "Backed bNVDA",
+    "description": "ERC-20 backed 1:1 by NVIDIA common stock held in Swiss institutional custody. Issued by Backed Finance.",
+    "symbol": "bNVDA",
+    "marketCapUsd": 5000000.0,
+    "minInvestment": "$1",
+    "complianceObligations": "KYC and anti-money laundering checks required.",
+    "yearFounded": 2024,
+    "website": "https://backed.fi",
+    "xProfile": "https://x.com/BackedFi",
+    "backedBy": [
+      "NVIDIA common stock"
+    ],
+    "chain": [
+      "Ethereum"
+    ]
+  },
+  {
+    "name": "Swarm Tesla stock",
+    "description": "ERC-20 backed by Tesla common stock held by a Swarm Markets BaFin-regulated custodian.",
+    "symbol": "sTSLA",
+    "marketCapUsd": 3000000.0,
+    "minInvestment": "$1",
+    "complianceObligations": "KYC and anti-money laundering checks required.",
+    "yearFounded": 2022,
+    "website": "https://swarm.com",
+    "xProfile": "https://x.com/SwarmMarkets",
+    "backedBy": [
+      "Tesla common stock"
+    ],
+    "chain": [
+      "Polygon"
+    ]
+  },
+  {
+    "name": "Dinari dShares",
+    "description": "Family of tokenised US equities and ETFs issued by Dinari, the first SEC-registered broker-dealer authorised to issue on-chain US securities.",
+    "symbol": "dShares",
+    "minInvestment": "$1",
+    "complianceObligations": "KYC and anti-money laundering checks required.",
+    "yearFounded": 2023,
+    "website": "https://dinari.com",
+    "xProfile": "https://x.com/dinarixyz",
+    "backedBy": [
+      "US publicly listed equities and ETF shares"
+    ],
+    "chain": [
+      "Base",
+      "Ethereum",
+      "Arbitrum"
+    ]
+  },
+  {
+    "name": "Spiko EU Treasury bill",
+    "description": "Tokenised share of a Banque de France-regulated French UCITS money-market fund investing in EU sovereign Treasury bills.",
+    "symbol": "EUTBL",
+    "marketCapUsd": 30000000.0,
+    "minInvestment": "100",
+    "complianceObligations": "KYC and anti-money laundering checks required.",
+    "yearFounded": 2023,
+    "website": "https://www.spiko.io",
+    "xProfile": "https://x.com/spikofinance",
+    "backedBy": [
+      "US Treasury bills",
+      "EU sovereign Treasury bills"
+    ],
+    "chain": [
+      "Ethereum"
+    ]
+  },
+  {
+    "name": "Spiko Amundi EUR Overnight Swap Fund",
+    "description": "Tokenised share of the Amundi EUR Overnight Swap Fund, a Paris-listed UCITS fund.",
+    "symbol": "eurSAFO",
+    "marketCapUsd": 314000000.0,
+    "minInvestment": "100",
+    "complianceObligations": "KYC and anti-money laundering checks required.",
+    "yearFounded": 2024,
+    "website": "https://www.spiko.io",
+    "xProfile": "https://x.com/spikofinance",
+    "backedBy": [
+      "EU sovereign Treasury bills"
+    ],
+    "issuedBy": "Amundi",
+    "chain": [
+      "Ethereum"
+    ]
+  },
+  {
+    "name": "Spiko Amundi USD Overnight Swap Fund",
+    "description": "Tokenised share of the Amundi USD Overnight Swap Fund, a UCITS-compliant short-duration money-market fund.",
+    "symbol": "SAFO",
+    "marketCapUsd": 116000000.0,
+    "minInvestment": "$100",
+    "complianceObligations": "KYC and anti-money laundering checks required.",
+    "yearFounded": 2024,
+    "website": "https://www.spiko.io",
+    "xProfile": "https://x.com/spikofinance",
+    "backedBy": [
+      "US government money-market instruments"
+    ],
+    "issuedBy": "Amundi",
+    "chain": [
+      "Ethereum"
+    ]
+  },
+  {
+    "name": "Aberdeen money market fund",
+    "description": "Tokenised sterling money-market fund issued by Aberdeen Group via Archax. FCA-regulated; targets institutional investors.",
+    "symbol": "AMMF",
+    "marketCapUsd": 10000000.0,
+    "minInvestment": "$100,000",
+    "complianceObligations": "Restricted to institutional investors; KYC and anti-money laundering checks required.",
+    "yearFounded": 2023,
+    "website": "https://www.aberdeeninvestments.com",
+    "xProfile": "https://x.com/aberdeengroup",
+    "backedBy": [
+      "US government money-market instruments"
+    ],
+    "issuedBy": "Aberdeen",
+    "chain": [
+      "Hedera"
+    ]
+  },
+  {
+    "name": "Arca US Treasury digital fund",
+    "description": "One of the first SEC-registered tokenised US Treasury digital funds. Issued by Arca Labs.",
+    "symbol": "ArCoin",
+    "marketCapUsd": 10000000.0,
+    "minInvestment": "$1,000",
+    "complianceObligations": "KYC and anti-money laundering checks required.",
+    "yearFounded": 2020,
+    "website": "https://arca.com",
+    "xProfile": "https://x.com/arcalabs",
+    "backedBy": [
+      "US Treasury bills"
+    ],
+    "chain": [
+      "Ethereum"
+    ]
+  },
+  {
+    "name": "ChinaAMC USD money market digital fund",
+    "description": "Tokenised USD money-market fund managed by ChinaAMC and issued via Libeara, the digital-assets platform of Standard Chartered.",
+    "symbol": "CUMIU",
+    "marketCapUsd": 547000000.0,
+    "minInvestment": "$1,000",
+    "complianceObligations": "Restricted to institutional investors; KYC and anti-money laundering checks required.",
+    "yearFounded": 2025,
+    "website": "https://libeara.com",
+    "xProfile": "https://x.com/libeara_io",
+    "backedBy": [
+      "US government money-market instruments"
+    ],
+    "issuedBy": "ChinaAMC",
+    "chain": [
+      "Ethereum"
+    ]
+  },
+  {
+    "name": "Matrixdock gold",
+    "description": "Tokenised exposure to allocated physical gold, issued by Matrixdock from Singapore. Primarily used as a store of value with low industrial demand.",
+    "symbol": "XAUm",
+    "minInvestment": "$1",
+    "complianceObligations": "KYC and anti-money laundering checks required.",
+    "yearFounded": 2024,
+    "website": "https://www.matrixdock.com",
+    "xProfile": "https://x.com/matrixdock",
+    "backedBy": [
+      "LBMA Good Delivery gold"
+    ],
+    "chain": [
+      "Ethereum"
+    ]
+  },
+  {
+    "name": "Matrixdock silver",
+    "description": "Tokenised exposure to allocated physical silver, issued by Matrixdock from Singapore. Silver has both industrial demand and a store-of-value role.",
+    "symbol": "XAGm",
+    "minInvestment": "$1",
+    "complianceObligations": "KYC and anti-money laundering checks required.",
+    "yearFounded": 2024,
+    "website": "https://www.matrixdock.com",
+    "xProfile": "https://x.com/matrixdock",
+    "backedBy": [
+      "Institutionally custodied silver"
+    ],
+    "chain": [
+      "Ethereum"
+    ]
+  }
+]

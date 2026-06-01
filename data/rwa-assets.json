@@ -1,0 +1,218 @@
+[
+  {
+    "name": "US Treasury bills",
+    "description": "Short-term sovereign debt instruments issued by the US Department of the Treasury with maturities under one year.",
+    "custodian": "Regulated custodian banks hold the underlying US Treasury bills.",
+    "category": [
+      "Government securities"
+    ]
+  },
+  {
+    "name": "US government money-market instruments",
+    "description": "SEC Rule 2a-7 portfolio of short-duration US government securities, repurchase agreements and agency paper.",
+    "custodian": "Registered money-market fund custodian banks hold the underlying instruments.",
+    "category": [
+      "Government securities"
+    ]
+  },
+  {
+    "name": "EU sovereign Treasury bills",
+    "description": "Short-term sovereign debt issued by EU member states, primarily France and Germany.",
+    "custodian": "UCITS custodians hold the underlying Treasury bills under Banque de France oversight.",
+    "category": [
+      "Government securities"
+    ]
+  },
+  {
+    "name": "US corporate credit obligations",
+    "description": "Investment-grade and high-yield US corporate loans, bonds and credit facilities used as collateral in tokenised credit pools.",
+    "custodian": "Institutional custodians and SPV trustees hold the underlying credit obligations.",
+    "category": [
+      "Private credit"
+    ]
+  },
+  {
+    "name": "LBMA Good Delivery gold",
+    "description": "Allocated physical gold bars meeting LBMA Good Delivery standards stored in NYDFS-supervised vaults.",
+    "custodian": "Paxos Trust Company custodies the underlying physical gold in Brink's vaults.",
+    "category": [
+      "Commodities"
+    ]
+  },
+  {
+    "name": "Allocated gold in Swiss vaults",
+    "description": "Allocated physical gold held in Swiss vaults backing each XAUT token at one fine troy ounce per token.",
+    "custodian": "Tether operates the Swiss vault that holds the underlying allocated gold.",
+    "category": [
+      "Commodities"
+    ]
+  },
+  {
+    "name": "LBMA Singapore allocated gold",
+    "description": "Allocated physical gold (one gram per token) stored in LBMA-approved Singapore vaults.",
+    "custodian": "Cache Global custodies the underlying gold in LBMA-approved Singapore vaults.",
+    "category": [
+      "Commodities"
+    ]
+  },
+  {
+    "name": "Institutionally custodied gold",
+    "description": "Physical gold held in institutional custody under a regulated ETP structure backing tokenised gold products.",
+    "custodian": "JPMorgan custodies the underlying physical gold for the WisdomTree ETP trustee.",
+    "category": [
+      "Commodities"
+    ]
+  },
+  {
+    "name": "Institutionally custodied silver",
+    "description": "Physical silver held in institutional custody under a regulated ETP structure backing tokenised silver products.",
+    "custodian": "JPMorgan custodies the underlying physical silver for the WisdomTree ETP trustee.",
+    "category": [
+      "Commodities"
+    ]
+  },
+  {
+    "name": "Verra VCS REDD+ carbon credits",
+    "description": "Verified Verra VCS carbon offset credits representing avoided emissions from REDD+ forest conservation projects.",
+    "custodian": "The Verra Registry holds the underlying carbon credits, bridged on-chain by Toucan Protocol.",
+    "category": [
+      "Commodities"
+    ]
+  },
+  {
+    "name": "Post-2012 Verra VCS nature carbon credits",
+    "description": "Post-2012 nature-based Verra VCS carbon credits with stricter eligibility filters than the legacy Toucan BCT pool.",
+    "custodian": "The Verra Registry holds the underlying nature-based carbon credits, bridged on-chain by Toucan Protocol.",
+    "category": [
+      "Commodities"
+    ]
+  },
+  {
+    "name": "Amazonian REDD+ carbon credits",
+    "description": "Certified REDD+ carbon credits from Amazonian forest conservation projects, tokenised by Moss Earth.",
+    "custodian": "The Verra Registry holds the underlying Amazonian REDD+ credits, bridged on-chain by Moss Earth.",
+    "category": [
+      "Commodities"
+    ]
+  },
+  {
+    "name": "US residential rental properties",
+    "description": "Portfolios of US single-family and multi-unit rentals held in LLC special-purpose vehicles. Each token corresponds to a specific property or pool.",
+    "custodian": "RealT, Landshare, and Lofty special-purpose vehicles hold the underlying rental properties.",
+    "category": [
+      "Real estate"
+    ]
+  },
+  {
+    "name": "UK and European real estate",
+    "description": "Residential and commercial real estate in the UK and continental Europe held in Tangible Swiss SPVs and wrapped as NFTs.",
+    "custodian": "Tangible operates the Swiss special-purpose vehicles that hold the underlying real estate.",
+    "category": [
+      "Real estate"
+    ]
+  },
+  {
+    "name": "US home equity lines of credit",
+    "description": "Revolving credit facilities secured by equity in US residential properties, originated by Figure Technologies on Provenance Blockchain.",
+    "custodian": "Figure Technologies originates and services the underlying HELOCs and records them on Provenance Blockchain.",
+    "category": [
+      "Real estate"
+    ]
+  },
+  {
+    "name": "Senior secured global credit pools",
+    "description": "Diversified senior secured credit pools funding FinTech lenders in emerging markets via Goldfinch.",
+    "custodian": "Goldfinch protocol SPVs hold the underlying credit positions.",
+    "category": [
+      "Private credit"
+    ]
+  },
+  {
+    "name": "Centrifuge real-world credit pool assets",
+    "description": "Diversified pool of real-world credit assets including invoices, trade receivables and mortgages financed via Centrifuge issuer SPVs.",
+    "custodian": "Centrifuge issuer SPVs hold the underlying credit pool assets.",
+    "category": [
+      "Private credit"
+    ]
+  },
+  {
+    "name": "Hamilton Lane senior credit portfolio",
+    "description": "Diversified senior credit portfolio managed by Hamilton Lane and tokenised via Securitize as the SCOPE feeder fund.",
+    "custodian": "Hamilton Lane operates the fund SPV that holds the underlying credit positions, with Securitize acting as transfer agent.",
+    "category": [
+      "Private credit"
+    ]
+  },
+  {
+    "name": "Apollo diversified credit portfolio",
+    "description": "Diversified credit portfolio managed by Apollo Global Management and tokenised via Securitize as the ACRED feeder fund.",
+    "custodian": "Apollo operates the fund SPV that holds the underlying credit positions, with Securitize acting as transfer agent.",
+    "category": [
+      "Private credit"
+    ]
+  },
+  {
+    "name": "Emerging-market trade finance receivables",
+    "description": "Trade-finance receivables and SME loans originated in Brazil and Southeast Asia, tokenised via Credix.",
+    "custodian": "Credix special-purpose vehicles hold the underlying trade-finance receivables.",
+    "category": [
+      "Trade finance"
+    ]
+  },
+  {
+    "name": "AAA-rated CLO tranches",
+    "description": "Senior AAA-rated tranches of collateralised loan obligations securitising portfolios of senior secured loans.",
+    "custodian": "Multiple CLO managers and their trustees hold the underlying AAA-rated tranches.",
+    "category": [
+      "Private credit"
+    ]
+  },
+  {
+    "name": "iShares Core S&P 500 UCITS ETF",
+    "description": "Shares of BlackRock's iShares Core S&P 500 UCITS ETF held by a Swiss custodian and wrapped as a tokenised certificate.",
+    "custodian": "Backed Finance custodies the underlying ETF shares with a Swiss DLT Act-regulated broker.",
+    "category": [
+      "Tokenized equities"
+    ]
+  },
+  {
+    "name": "iShares USD Treasury Bond 1\u20133yr UCITS ETF",
+    "description": "Shares of BlackRock's iShares USD Treasury Bond 1\u20133yr UCITS ETF held by a Swiss custodian and wrapped as a tokenised certificate.",
+    "custodian": "Backed Finance custodies the underlying ETF shares with a Swiss DLT Act-regulated broker.",
+    "category": [
+      "Tokenized equities"
+    ]
+  },
+  {
+    "name": "NVIDIA common stock",
+    "description": "NVIDIA common shares held in institutional custody by a Swiss broker, wrapped as a tokenised certificate.",
+    "custodian": "Backed Finance custodies the underlying NVIDIA shares with a Swiss DLT Act-regulated broker.",
+    "category": [
+      "Tokenized equities"
+    ]
+  },
+  {
+    "name": "Tesla common stock",
+    "description": "Tesla common shares held by Swarm Markets' BaFin-regulated Swiss custodian and wrapped as a tokenised certificate.",
+    "custodian": "Swarm Markets custodies the underlying Tesla shares with a BaFin-regulated broker.",
+    "category": [
+      "Tokenized equities"
+    ]
+  },
+  {
+    "name": "KKR Health Care Strategic Growth Fund II LP interest",
+    "description": "Limited partner interest in KKR's Health Care Strategic Growth Fund II, tokenised via Securitize on Avalanche.",
+    "custodian": "The KKR Fund general partner holds the underlying LP interest, with Securitize acting as transfer agent.",
+    "category": [
+      "Private credit"
+    ]
+  },
+  {
+    "name": "US publicly listed equities and ETF shares",
+    "description": "Common stock and ETF shares of publicly listed US issuers tokenised by Dinari, the first SEC-registered broker-dealer for on-chain US equities.",
+    "custodian": "US registered broker-dealer custodians that are DTCC members hold the underlying equities and ETF shares.",
+    "category": [
+      "Tokenized equities"
+    ]
+  }
+]

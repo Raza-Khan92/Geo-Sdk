@@ -1,0 +1,164 @@
+{
+  "bountyName": "Real World Assets Bounty",
+  "editName": "RWA: Tokenized Real World Asset Protocols",
+  "properties": {
+    "website":               { "label": "Website",                "type": "url",     "wellKnownId": "412ff593e9154012a43d4c27ec5c68b6" },
+    "tvlUsd":               { "label": "TVL (USD)",              "type": "float64" },
+    "minInvestment":        { "label": "Min Investment",         "type": "text" },
+    "custodyModel":         { "label": "Custody Model",          "type": "text" },
+    "complianceObligations":{ "label": "Compliance Obligations", "type": "text" },
+    "tokens":               { "label": "Tokens",                 "type": "text" },
+    "xProfile":             { "label": "X Profile",              "type": "url" },
+    "github":               { "label": "GitHub",                 "type": "url" },
+    "docs":                 { "label": "Documentation",          "type": "url" },
+    "category":             { "label": "Asset Category",         "type": "relation" },
+    "chain":                { "label": "Chain",                  "type": "relation" },
+    "symbol":               { "label": "Symbol",                 "type": "text" },
+    "contractAddress":      { "label": "Contract Address",       "type": "text" },
+    "marketCapUsd":         { "label": "Market Cap (USD)",       "type": "float64" },
+    "yearFounded":          { "label": "Year Founded",           "type": "int64" },
+    "coinGeckoUrl":         { "label": "CoinGecko URL",          "type": "url" },
+    "backedBy":             { "label": "Backed By",              "type": "relation" },
+    "issuedBy":             { "label": "Issued By",              "type": "relation" },
+    "custodian":            { "label": "Custodian",              "type": "text" },
+    "aum":                  { "label": "AUM",                    "type": "text" },
+    "legalName":            { "label": "Legal Name",             "type": "text" },
+    "regulatoryStatuses":   { "label": "Regulatory Statuses",    "type": "text" }
+  },
+  "types": {
+    "rwaProtocol": {
+      "name": "RWA Protocol",
+      "properties": ["website", "tvlUsd", "minInvestment", "custodyModel", "complianceObligations", "tokens", "xProfile", "github", "docs", "category", "chain"]
+    },
+    "rwaCategory": {
+      "name": "RWA Category",
+      "properties": []
+    },
+    "rwaAsset": {
+      "name": "RWA Asset",
+      "properties": ["custodian", "category"]
+    },
+    "rwaToken": {
+      "name": "RWA Token",
+      "properties": ["symbol", "contractAddress", "marketCapUsd", "minInvestment", "complianceObligations", "yearFounded", "website", "xProfile", "coinGeckoUrl", "backedBy", "issuedBy", "chain"]
+    },
+    "rwaCompany": {
+      "name": "RWA Company",
+      "properties": ["website", "xProfile", "tvlUsd", "minInvestment", "custodyModel", "complianceObligations", "tokens", "aum", "legalName", "regulatoryStatuses", "yearFounded", "category", "chain"]
+    }
+  },
+  "enums": [
+    { "name": "Tokenized treasuries", "type": "rwaCategory", "source": "categories" },
+    { "name": "Private credit",       "type": "rwaCategory", "source": "categories" },
+    { "name": "Real estate",          "type": "rwaCategory", "source": "categories" },
+    { "name": "Yield",                "type": "rwaCategory", "source": "categories" },
+    { "name": "Stablecoin",           "type": "rwaCategory", "source": "categories" },
+    { "name": "Tokenized equities",   "type": "rwaCategory", "source": "categories" },
+    { "name": "Infrastructure",       "type": "rwaCategory", "source": "categories" },
+    { "name": "Commodities",          "type": "rwaCategory", "source": "categories" },
+    { "name": "Trade finance",        "type": "rwaCategory", "source": "categories" },
+    { "name": "Government securities","type": "rwaCategory", "source": "categories" },
+    { "name": "Private equity",       "type": "rwaCategory", "source": "categories" }
+  ],
+  "sources": {
+    "assets": {
+      "file": "rwa-assets.json",
+      "type": "rwaAsset",
+      "order": 0,
+      "fields": {
+        "custodian": "custodian"
+      },
+      "relations": {
+        "category": { "property": "category", "source": "categories" }
+      }
+    },
+    "rwas": {
+      "file": "rwa.json",
+      "type": "rwaProtocol",
+      "order": 1,
+      "fields": {
+        "website":               "website",
+        "tvlUsd":               "tvlUsd",
+        "minInvestment":        "minInvestment",
+        "custodyModel":         "custodyModel",
+        "complianceObligations": "complianceObligations",
+        "tokens":               "tokens",
+        "xProfile":             "xProfile",
+        "github":               "github",
+        "docs":                 "docs"
+      },
+      "relations": {
+        "category": { "property": "category", "source": "categories" },
+        "chain":    { "property": "chain",    "source": "chains" }
+      }
+    },
+    "companies": {
+      "file": "rwa-companies.json",
+      "type": "rwaCompany",
+      "order": 2,
+      "fields": {
+        "website":               "website",
+        "xProfile":             "xProfile",
+        "tvlUsd":               "tvlUsd",
+        "minInvestment":        "minInvestment",
+        "custodyModel":         "custodyModel",
+        "complianceObligations": "complianceObligations",
+        "issuedTokens":         "tokens",
+        "aum":                  "aum",
+        "legalName":            "legalName",
+        "regulatoryStatuses":   "regulatoryStatuses",
+        "yearFounded":          "yearFounded"
+      },
+      "relations": {
+        "category": { "property": "category", "source": "categories" },
+        "chain":    { "property": "chain",    "source": "chains" }
+      }
+    },
+    "tokens": {
+      "file": "rwa-tokens.json",
+      "type": "rwaToken",
+      "order": 3,
+      "fields": {
+        "symbol":               "symbol",
+        "contractAddress":      "contractAddress",
+        "marketCapUsd":         "marketCapUsd",
+        "minInvestment":        "minInvestment",
+        "complianceObligations": "complianceObligations",
+        "yearFounded":          "yearFounded",
+        "website":              "website",
+        "xProfile":             "xProfile",
+        "coinGeckoUrl":         "coinGeckoUrl"
+      },
+      "relations": {
+        "backedBy": { "property": "backedBy", "source": "assets" },
+        "issuedBy": { "property": "issuedBy", "source": "companies" },
+        "chain":    { "property": "chain",    "source": "chains" }
+      }
+    }
+  },
+  "existingEntities": {
+    "chains": {
+      "Ethereum":              "69d67eaa80d3419a911424d63aed6d67",
+      "Polygon":               "e2c22cd5838247a2be7809ed78c2adf3",
+      "Arbitrum":              "b1f836bd3866481bb98355f43a12ee86",
+      "Solana":                "c008bff16d2c4ed8b830e451c530a0ff",
+      "Avalanche":             "9c1ba8215d644e57a9f2b82b95e2d1a5",
+      "Optimism":              "85e4d26fb88442629f7494162432f381",
+      "BNB Chain":             "dd8ce11b10fe49c6959a8ac30e5575b7",
+      "Base":                  "82ea312ef4c84a8e9228370643ba4dae",
+      "Aptos":                 "b9b419cbf0d74d6fb1093e9f1ef7c52e",
+      "Stellar":               "0ac5703b33de4e76acfd60666bbf0931",
+      "Algorand":              "60b12a384ab24d0e85ac97daf3cbe3c0",
+      "Gnosis":                "88bc74264444449790cd095987508aa7",
+      "Hedera":                "06ae96fe43304e98bfb1a45f42413618",
+      "Plume Network":         "951c407460ed4e2393bab3242c8f3be9",
+      "MANTRA Chain":          "06d9026e6abd45a5a953685673f56e60",
+      "Provenance Blockchain": "fa206ba15f1c43deb8c93b911eccbf82",
+      "Polymesh":              "46526ef7459c4796b0fe9a1945db6917",
+      "Centrifuge":            "bcb2285e348446e6851574c75c4e47db",
+      "Celo":                  "80398480360f43dcbd543dab2b97d370",
+      "Mantle":                "4f6a11a6ae1d48478fac902efbed6a03",
+      "Canton Network":        "2ace343b82e3421f947ca5619153a1c0"
+    }
+  }
+}

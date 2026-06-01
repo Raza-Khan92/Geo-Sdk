@@ -1,0 +1,273 @@
+[
+  {
+    "name": "BlackRock",
+    "description": "World's largest asset manager, with more than $10 trillion in assets under management. Notable in the RWA sector for issuing BUIDL, a tokenised institutional USD digital liquidity fund distributed via Securitize and held with Bank of New York Mellon.",
+    "website": "https://www.blackrock.com",
+    "xProfile": "https://x.com/BlackRock",
+    "tvlUsd": 2580000000.0,
+    "minInvestment": "$5,000,000",
+    "custodyModel": "Bank of New York Mellon",
+    "complianceObligations": "BUIDL is offered under SEC Rule 144A and Section 3(c)(7), restricted to qualified purchasers, with KYC handled by Securitize.",
+    "issuedTokens": "BUIDL",
+    "aum": "$10T",
+    "legalName": "BlackRock, Inc.",
+    "regulatoryStatuses": "SEC-registered investment adviser; FINRA member",
+    "yearFounded": 1988,
+    "chain": [
+      "Ethereum",
+      "Arbitrum",
+      "Avalanche",
+      "Optimism",
+      "Polygon",
+      "Aptos",
+      "Solana"
+    ],
+    "category": [
+      "Tokenized treasuries"
+    ]
+  },
+  {
+    "name": "Franklin Templeton",
+    "description": "Global investment management firm with approximately $1.5 trillion in assets under management. Among the first traditional finance institutions to tokenise a regulated US government money-market fund, recorded on-chain as BENJI across Stellar, Polygon, and additional networks.",
+    "website": "https://www.franklinresources.com",
+    "xProfile": "https://x.com/FTI_US",
+    "tvlUsd": 430000000.0,
+    "minInvestment": "$20",
+    "custodyModel": "Bank of New York Mellon",
+    "complianceObligations": "Access is provided through dedicated investor channels, with ownership records maintained through the applicable transfer-agent framework and a blockchain-integrated recordkeeping system.",
+    "issuedTokens": "BENJI",
+    "aum": "$1.5T",
+    "legalName": "Franklin Resources, Inc.",
+    "regulatoryStatuses": "SEC-registered investment adviser",
+    "yearFounded": 1947,
+    "chain": [
+      "Stellar",
+      "Polygon",
+      "Ethereum",
+      "Arbitrum",
+      "Avalanche",
+      "Base",
+      "Aptos",
+      "Solana"
+    ],
+    "category": [
+      "Tokenized treasuries"
+    ]
+  },
+  {
+    "name": "Paxos",
+    "description": "NYDFS-chartered trust company building regulated digital-asset infrastructure. Issues PAX Gold (PAXG), a token backed 1:1 by LBMA Good Delivery physical gold, alongside the USDP stablecoin and tokenisation rails for partner institutions.",
+    "website": "https://paxos.com",
+    "xProfile": "https://x.com/Paxos",
+    "tvlUsd": 480000000.0,
+    "minInvestment": "$1",
+    "custodyModel": "NYDFS Trust Company",
+    "complianceObligations": "Paxos operates under an NYDFS Trust Charter; KYC is required for large redemptions.",
+    "issuedTokens": "PAXG, USDP",
+    "aum": "$3B+ reserves",
+    "legalName": "Paxos Trust Company, LLC",
+    "regulatoryStatuses": "NYDFS Trust Charter",
+    "yearFounded": 2012,
+    "chain": [
+      "Ethereum"
+    ],
+    "category": [
+      "Commodities",
+      "Stablecoin"
+    ]
+  },
+  {
+    "name": "Janus Henderson",
+    "description": "Active global investment manager with around $350 billion in assets under management. Partners with Anemoy on Centrifuge to issue JTRSY and JAAA, bringing US Treasury bills and AAA-rated CLO tranches on-chain for institutional investors.",
+    "website": "https://www.janushenderson.com",
+    "xProfile": "https://x.com/JanusHenderson",
+    "minInvestment": "$100",
+    "complianceObligations": "Janus Henderson is an SEC-registered investment adviser and FCA-regulated; tokenised products are restricted to non-US institutional investors.",
+    "issuedTokens": "JTRSY, JAAA",
+    "aum": "$350B",
+    "legalName": "Janus Henderson Group plc",
+    "regulatoryStatuses": "SEC-registered investment adviser; FCA-regulated",
+    "yearFounded": 2017,
+    "chain": [
+      "Centrifuge"
+    ],
+    "category": [
+      "Tokenized treasuries",
+      "Private credit"
+    ]
+  },
+  {
+    "name": "WisdomTree",
+    "description": "ETF issuer with over $100 billion in assets under management. Operates WisdomTree Prime, a multi-chain digital-assets platform that tokenises commodity-backed products (WTGOLD, WTSILV) and a government money-market fund (WTGXX).",
+    "website": "https://www.wisdomtreeprime.com",
+    "xProfile": "https://x.com/WisdomTreePrime",
+    "minInvestment": "$1",
+    "complianceObligations": "WisdomTree is an SEC-registered investment adviser and FINRA member; tokenised products require KYC.",
+    "issuedTokens": "WTGOLD, WTSILV, WTGXX",
+    "aum": "$100B+",
+    "legalName": "WisdomTree, Inc.",
+    "regulatoryStatuses": "SEC-registered investment adviser; FINRA member",
+    "yearFounded": 2004,
+    "chain": [
+      "Ethereum",
+      "Stellar"
+    ],
+    "category": [
+      "Commodities",
+      "Tokenized treasuries"
+    ]
+  },
+  {
+    "name": "Apollo Global Management",
+    "description": "Alternative asset manager with more than $650 billion in assets under management. Issues ACRED, a tokenised feeder share of its Diversified Credit Fund distributed via Securitize on Ethereum and Avalanche, expanding access to private credit for accredited investors.",
+    "website": "https://www.apollo.com",
+    "xProfile": "https://x.com/ApolloGlobal",
+    "minInvestment": "$10,000",
+    "complianceObligations": "Apollo Global Management is an SEC-registered investment adviser and FINRA member; ACRED is restricted to accredited investors with KYC handled by Securitize.",
+    "issuedTokens": "ACRED",
+    "aum": "$650B+",
+    "legalName": "Apollo Global Management, Inc.",
+    "regulatoryStatuses": "SEC-registered investment adviser; FINRA member",
+    "yearFounded": 1990,
+    "chain": [
+      "Ethereum",
+      "Avalanche"
+    ],
+    "category": [
+      "Private credit"
+    ]
+  },
+  {
+    "name": "KKR",
+    "description": "Global investment firm managing over $550 billion in assets across private equity, credit, and infrastructure. Tokenises limited-partner interests in its Health Care Strategic Growth Fund II as SKHC on Avalanche via Securitize, opening institutional alternatives to qualified investors.",
+    "website": "https://www.kkr.com",
+    "xProfile": "https://x.com/KKR_Co",
+    "minInvestment": "$100,000",
+    "complianceObligations": "KKR is an SEC-registered investment adviser; SKHC is restricted to qualified purchasers with KYC handled by Securitize.",
+    "issuedTokens": "SKHC",
+    "aum": "$550B+",
+    "legalName": "KKR & Co. Inc.",
+    "regulatoryStatuses": "SEC-registered investment adviser",
+    "yearFounded": 1976,
+    "chain": [
+      "Avalanche"
+    ],
+    "category": [
+      "Private equity"
+    ]
+  },
+  {
+    "name": "Hamilton Lane",
+    "description": "Private-markets investment manager overseeing more than $900 billion in client assets. Tokenises its Senior Credit Opportunities Fund as SCOPE via Securitize, lowering the entry threshold for accredited investors compared with traditional private-fund commitments.",
+    "website": "https://www.hamiltonlane.com",
+    "xProfile": "https://x.com/hamiltonlane",
+    "minInvestment": "$10,000",
+    "complianceObligations": "Hamilton Lane is an SEC-registered investment adviser; SCOPE is restricted to accredited investors with KYC handled by Securitize.",
+    "issuedTokens": "SCOPE",
+    "aum": "$900B+",
+    "legalName": "Hamilton Lane Incorporated",
+    "regulatoryStatuses": "SEC-registered investment adviser",
+    "yearFounded": 1991,
+    "chain": [
+      "Ethereum",
+      "Polygon",
+      "Avalanche"
+    ],
+    "category": [
+      "Private credit"
+    ]
+  },
+  {
+    "name": "ChinaAMC",
+    "description": "Chinese asset manager with over $300 billion in assets under management. Through its MAS-licensed Singapore subsidiary, issues CUMIU, a regulated tokenised USD money-market fund, on Ethereum in partnership with Libeara.",
+    "website": "https://www.chinaamc.com",
+    "xProfile": "https://x.com/ChinaAMC_EN",
+    "minInvestment": "$1,000",
+    "complianceObligations": "ChinaAMC operates through a MAS-licensed Singapore subsidiary; CUMIU is restricted to institutional investors and requires KYC.",
+    "issuedTokens": "CUMIU",
+    "aum": "$300B+",
+    "legalName": "China Asset Management Co., Ltd.",
+    "regulatoryStatuses": "MAS-licensed (Singapore subsidiary)",
+    "yearFounded": 1998,
+    "chain": [
+      "Ethereum"
+    ],
+    "category": [
+      "Tokenized treasuries"
+    ]
+  },
+  {
+    "name": "Standard Chartered",
+    "description": "International bank and financial-services group headquartered in London, with operations spanning Asia, Africa, and the Middle East. Operates Libeara, its MAS-licensed digital-assets subsidiary that tokenises regulated funds for institutional managers such as ChinaAMC.",
+    "website": "https://www.sc.com",
+    "xProfile": "https://x.com/StanChart",
+    "complianceObligations": "Standard Chartered is MAS-licensed through its Libeara subsidiary and FCA-regulated; all products require institutional-grade KYC.",
+    "issuedTokens": "CUMIU",
+    "aum": "$800B+ assets",
+    "legalName": "Standard Chartered PLC",
+    "regulatoryStatuses": "MAS-licensed; FCA-regulated",
+    "yearFounded": 1853,
+    "chain": [
+      "Ethereum"
+    ],
+    "category": [
+      "Infrastructure"
+    ]
+  },
+  {
+    "name": "Amundi",
+    "description": "European asset manager based in France with around $2.2 trillion in assets under management. Partners with Spiko to issue tokenised UCITS-compliant overnight swap funds in both euro (eurSAFO) and US dollar (SAFO) denominations.",
+    "website": "https://www.amundi.com",
+    "xProfile": "https://x.com/Amundi_EN",
+    "minInvestment": "100",
+    "complianceObligations": "Amundi is AMF-regulated and its tokenised products are UCITS-compliant and SFDR-compliant; KYC is required through Spiko.",
+    "issuedTokens": "eurSAFO, SAFO",
+    "aum": "$2.2T",
+    "legalName": "Amundi SA",
+    "regulatoryStatuses": "AMF-regulated; UCITS-compliant",
+    "yearFounded": 2010,
+    "chain": [
+      "Ethereum"
+    ],
+    "category": [
+      "Tokenized treasuries"
+    ]
+  },
+  {
+    "name": "Aberdeen",
+    "description": "UK asset manager with over $500 billion in assets under management, renamed from abrdn plc to Aberdeen Group plc in March 2025. Issues AMMF, a tokenised sterling money-market fund, through FCA-regulated digital-asset exchange Archax on Hedera.",
+    "website": "https://www.aberdeeninvestments.com",
+    "xProfile": "https://x.com/aberdeengroup",
+    "minInvestment": "$100,000",
+    "complianceObligations": "Aberdeen is an FCA-regulated UK asset manager; AMMF requires full KYC and is restricted to institutional investors.",
+    "issuedTokens": "AMMF",
+    "aum": "$500B+",
+    "legalName": "Aberdeen Group plc",
+    "regulatoryStatuses": "FCA-regulated UK asset manager (LSE: ABDN)",
+    "yearFounded": 1825,
+    "chain": [
+      "Hedera"
+    ],
+    "category": [
+      "Tokenized treasuries"
+    ]
+  },
+  {
+    "name": "Tether",
+    "description": "Issuer of USDT and the gold-backed XAUT token. Reserves held with regulated custodians.",
+    "website": "https://tether.to",
+    "xProfile": "https://x.com/Tether_to",
+    "tvlUsd": 550000000,
+    "minInvestment": "$1",
+    "custodyModel": "Custodian",
+    "complianceObligations": "KYC is required for direct issuance and redemption; secondary market trading requires no KYC.",
+    "tokens": "USDT, XAUT",
+    "chain": [
+      "Ethereum"
+    ],
+    "category": [
+      "Stablecoin",
+      "Commodities"
+    ]
+  }
+]
